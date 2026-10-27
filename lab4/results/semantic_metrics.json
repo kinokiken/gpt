@@ -1,0 +1,233 @@
+{
+  "n_gallery": 45,
+  "class_names": [
+    "rod",
+    "coccus"
+  ],
+  "prompts": [
+    "a microscope image of elongated rod-shaped bacteria",
+    "a microscope image of round spherical cocci bacteria"
+  ],
+  "zero_shot_test_accuracy": 0.6666666666666666,
+  "split_counts": {
+    "train": 28,
+    "val": 8,
+    "test": 9
+  },
+  "split_sources": {
+    "train": [
+      "s01",
+      "s05",
+      "s06",
+      "s07"
+    ],
+    "val": [
+      "s03",
+      "s08"
+    ],
+    "test": [
+      "s02",
+      "s04",
+      "s09"
+    ]
+  },
+  "text_retrieval": [
+    {
+      "query": "a microscope image of elongated rod-shaped bacteria",
+      "matches": [
+        {
+          "id": "s04_01",
+          "cosine": 0.35396265983581543
+        },
+        {
+          "id": "s04_00",
+          "cosine": 0.3462029993534088
+        },
+        {
+          "id": "s04_02",
+          "cosine": 0.32999253273010254
+        },
+        {
+          "id": "s01_05",
+          "cosine": 0.3226604759693146
+        }
+      ]
+    },
+    {
+      "query": "a microscope image of round spherical cocci bacteria",
+      "matches": [
+        {
+          "id": "s07_04",
+          "cosine": 0.32323986291885376
+        },
+        {
+          "id": "s07_05",
+          "cosine": 0.32180657982826233
+        },
+        {
+          "id": "s04_03",
+          "cosine": 0.3169238269329071
+        },
+        {
+          "id": "s09_01",
+          "cosine": 0.30740219354629517
+        }
+      ]
+    }
+  ],
+  "metric_learning": {
+    "epochs": 150,
+    "best_epoch": 10,
+    "margin": 0.5,
+    "train_batch_triplets": 64,
+    "loss_first": 0.4851389229297638,
+    "loss_last": 0.0,
+    "results": {
+      "CLIP": {
+        "threshold_from_validation": 0.5151097476482391,
+        "val_balanced_accuracy": 0.9166666666666667,
+        "test_pair_accuracy": 0.5555555555555556,
+        "test_pair_balanced_accuracy": 0.6103896103896104,
+        "test_ROC_AUC": 0.5097402597402597,
+        "test_pairs": 36,
+        "positive_pairs": 22,
+        "negative_pairs": 14,
+        "test_mean_precision_at_3": 0.8148148148148148
+      },
+      "Triplet projection": {
+        "threshold_from_validation": 0.39408306777477264,
+        "val_balanced_accuracy": 1.0,
+        "test_pair_accuracy": 0.5833333333333334,
+        "test_pair_balanced_accuracy": 0.5811688311688312,
+        "test_ROC_AUC": 0.6168831168831169,
+        "test_pairs": 36,
+        "positive_pairs": 22,
+        "negative_pairs": 14,
+        "test_mean_precision_at_3": 0.7037037037037037
+      }
+    },
+    "validation_history": [
+      {
+        "epoch": 10,
+        "validation_balanced_accuracy": 1.0,
+        "threshold": 0.39408306777477264
+      },
+      {
+        "epoch": 20,
+        "validation_balanced_accuracy": 1.0,
+        "threshold": 0.6487356722354889
+      },
+      {
+        "epoch": 30,
+        "validation_balanced_accuracy": 1.0,
+        "threshold": 0.74478480219841
+      },
+      {
+        "epoch": 40,
+        "validation_balanced_accuracy": 1.0,
+        "threshold": 0.77814120054245
+      },
+      {
+        "epoch": 50,
+        "validation_balanced_accuracy": 1.0,
+        "threshold": 0.790215790271759
+      },
+      {
+        "epoch": 60,
+        "validation_balanced_accuracy": 1.0,
+        "threshold": 0.7945331633090973
+      },
+      {
+        "epoch": 70,
+        "validation_balanced_accuracy": 1.0,
+        "threshold": 0.7956253886222839
+      },
+      {
+        "epoch": 80,
+        "validation_balanced_accuracy": 1.0,
+        "threshold": 0.7960023283958435
+      },
+      {
+        "epoch": 90,
+        "validation_balanced_accuracy": 1.0,
+        "threshold": 0.796112596988678
+      },
+      {
+        "epoch": 100,
+        "validation_balanced_accuracy": 1.0,
+        "threshold": 0.7961238324642181
+      },
+      {
+        "epoch": 110,
+        "validation_balanced_accuracy": 1.0,
+        "threshold": 0.7960982322692871
+      },
+      {
+        "epoch": 120,
+        "validation_balanced_accuracy": 1.0,
+        "threshold": 0.7960590124130249
+      },
+      {
+        "epoch": 130,
+        "validation_balanced_accuracy": 1.0,
+        "threshold": 0.7960149049758911
+      },
+      {
+        "epoch": 140,
+        "validation_balanced_accuracy": 1.0,
+        "threshold": 0.7959690392017365
+      },
+      {
+        "epoch": 150,
+        "validation_balanced_accuracy": 1.0,
+        "threshold": 0.7959221005439758
+      }
+    ]
+  },
+  "video_search": {
+    "video_frames": 1334,
+    "fps": 25.0,
+    "indexed_frames": 27,
+    "duration_s": 53.36,
+    "text_queries": [
+      {
+        "query": "a microscope image of many thin curved bacteria",
+        "results": [
+          {
+            "seconds": 14.0,
+            "cosine": 0.3227262496948242
+          },
+          {
+            "seconds": 48.0,
+            "cosine": 0.3209994435310364
+          },
+          {
+            "seconds": 2.0,
+            "cosine": 0.31834664940834045
+          }
+        ]
+      },
+      {
+        "query": "a microscopic field with a few isolated bacteria",
+        "results": [
+          {
+            "seconds": 2.0,
+            "cosine": 0.3279453217983246
+          },
+          {
+            "seconds": 8.0,
+            "cosine": 0.3227241039276123
+          },
+          {
+            "seconds": 14.0,
+            "cosine": 0.3219951391220093
+          }
+        ]
+      }
+    ],
+    "known_frame_query_s": 10.0,
+    "nearest_nonidentical_s": 12.0,
+    "time_difference_s": 2.0,
+    "rutube_status": "HTTP 403; transport not validated"
+  }
+}

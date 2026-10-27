@@ -1,0 +1,60 @@
+{
+  "tracking_uri": "sqlite:////workspace/lab4/mlflow/mlflow.db",
+  "runs": [
+    {
+      "name": "logreg_C_0.1",
+      "run_id": "6438f8ee3eba4aec9f6b801bac04335b",
+      "val_accuracy": 0.875,
+      "model_uri": "models:/m-95fd3dc028bc4d78b1b0c8c6a0c48ec4"
+    },
+    {
+      "name": "logreg_C_1.0",
+      "run_id": "2f05873b5fc24e42b41bec82abc18e49",
+      "val_accuracy": 0.875,
+      "model_uri": "models:/m-a1a2ccac60424f4eb993a22555fd944d"
+    },
+    {
+      "name": "triplet_projection",
+      "run_id": "e8c8b6c034ef4dc3aad9d5ecb1444e9d",
+      "model_uri": "models:/m-77d81928031c482292e0a27437aaef51",
+      "reload_check": true
+    },
+    {
+      "name": "YOLO_pose",
+      "run_id": "4c2630e5d665445ea56853d52b130ea1"
+    },
+    {
+      "name": "Tracker_MIL",
+      "run_id": "2e8c9ba5af404c67b1c3172ec5b28fed"
+    },
+    {
+      "name": "Tracker_KCF",
+      "run_id": "c6f8e699ffb4423c819da6f7ec521fb3"
+    },
+    {
+      "name": "Tracker_CSRT",
+      "run_id": "74f5b7198bb344f4966ff7ecdf48ff82"
+    }
+  ],
+  "registered_versions": [
+    {
+      "name": "Andreev_Triplet_Projection",
+      "version": 1,
+      "status": "READY"
+    },
+    {
+      "name": "Andreev_Bacteria_LogReg",
+      "version": 2,
+      "status": "READY"
+    },
+    {
+      "name": "Andreev_Bacteria_LogReg",
+      "version": 1,
+      "status": "READY"
+    }
+  ],
+  "selected_C": 0.1,
+  "selected_logreg_test_accuracy": 0.7777777777777778,
+  "sklearn_reload_verified": true,
+  "pytorch_reload_verified": true
+}

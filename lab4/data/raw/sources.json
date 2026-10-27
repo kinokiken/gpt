@@ -1,0 +1,744 @@
+[
+  {
+    "name": "Pseudomonas.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Pseudomonas.jpg",
+    "path": "/workspace/lab4/data/raw/s01.jpg",
+    "bytes": 507934,
+    "metadata": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Pseudomonas.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionurl": "https://commons.wikimedia.org/wiki/File:Pseudomonas.jpg",
+      "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=1629338",
+      "extmetadata": {
+        "DateTime": {
+          "value": "2008-05-31 06:24:31",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Pseudomonas",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Pseudomonas aeruginosa|Biofilms|Images from the CDC Public Health Image Library|PD US HHS CDC|Scanning electron microscopic images of bacteria",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "This colorized version of PHIL 232 depicts a scanning electron micrograph (SEM) of a number of <i>Pseudomonas aeruginosa</i> bacteria.",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<table class=\"layouttemplate sourcetemplate\" style=\"width:100%; clear:both; text-align:center; margin:0.5em auto; box-sizing: border-box; padding: 0; border-spacing: 8px; background-color: var(--background-color-neutral-subtle, #f6f7f5); color: var(--color-base, #202122); border: var(--border-subtle, 1px solid #555555);\" dir=\"ltr\" lang=\"en\">\n<tbody><tr>\n<td><span typeof=\"mw:File\"><span><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/US_CDC_logo.svg/120px-US_CDC_logo.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"100\" height=\"76\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/US_CDC_logo.svg/250px-US_CDC_logo.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"723\" data-file-height=\"546\"></span></span>\n</td>\n<td><span class=\"layouttemplateargs\" style=\"display:none;speak:none;\" title=\"template=CDC-PHIL id%3D10043\"> </span>\n<p>This media comes from the <a href=\"https://en.wikipedia.org/wiki/Centers_for_Disease_Control_and_Prevention\" class=\"extiw\" title=\"w:Centers for Disease Control and Prevention\">Centers for Disease Control and Prevention</a>'s <a rel=\"nofollow\" class=\"external text\" href=\"https://phil.cdc.gov/\">Public Health Image Library</a> (PHIL), with identification number <b><a rel=\"nofollow\" class=\"external text\" href=\"https://phil.cdc.gov/details.aspx?pid=10043\">#10043</a></b>.\n</p>\n<div style=\"font-size:smaller;\">\n<p><b>Note:</b> Not all PHIL images are public domain; be sure to check copyright status and credit authors and content providers.\n</p>\n</div>\n<hr>\n<p><span style=\"font-size:x-small;line-height:140%\" class=\"plainlinks noprint\"><a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:CDC-PHIL/i18n/ar\" href=\"https://commons.wikimedia.org/wiki/Template:CDC-PHIL/i18n/ar\">العربية</a> | <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:CDC-PHIL/i18n/de\" href=\"https://commons.wikimedia.org/wiki/Template:CDC-PHIL/i18n/de\">Deutsch</a> | <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:CDC-PHIL/i18n/en\" href=\"https://commons.wikimedia.org/wiki/Template:CDC-PHIL/i18n/en\">English</a> | <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:CDC-PHIL/i18n/mk\" href=\"https://commons.wikimedia.org/wiki/Template:CDC-PHIL/i18n/mk\">македонски</a> | <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:CDC-PHIL/i18n/sl\" href=\"https://commons.wikimedia.org/wiki/Template:CDC-PHIL/i18n/sl\">slovenščina</a> | <small class=\"plainlinks\"><a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/w/index.php?title=Template:CDC-PHIL/lang&amp;action=edit\" href=\"https://commons.wikimedia.org/w/index.php?title=Template:CDC-PHIL/lang&amp;action=edit\">+/−</a></small></span>\n</p>\n</td></tr></tbody></table>\n<a class=\"external free\" data-mw-original-href=\"http://de.wikipedia.org/wiki/Bild:Pseudomonas.jpg\" href=\"https://de.wikipedia.org/wiki/Bild:Pseudomonas.jpg\">http://de.wikipedia.org/wiki/Bild:Pseudomonas.jpg</a>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<ul><li>Photo Credit: Janice Haney Carr</li>\n<li>Content Providers(s): CDC/ Janice Haney Carr</li></ul>",
+          "source": "commons-desc-page"
+        },
+        "Permission": {
+          "value": "None - This image is in the public domain and thus free of any copyright restrictions. As a matter of courtesy we request that the content provider be credited and notified in any public or private usage of this image.",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseShortName": {
+          "value": "Public domain",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Public domain",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "false",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Copyrighted": {
+          "value": "False",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "pd",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "Streptococcus_pneumoniae-263.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Streptococcus_pneumoniae-263.jpg",
+    "path": "/workspace/lab4/data/raw/s02.jpg",
+    "bytes": 1647211,
+    "metadata": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Streptococcus_pneumoniae-263.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionurl": "https://commons.wikimedia.org/wiki/File:Streptococcus_pneumoniae-263.jpg",
+      "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=7582958",
+      "extmetadata": {
+        "DateTime": {
+          "value": "2009-08-17 10:06:45",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Streptococcus pneumoniae-263",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Streptococcus pneumoniae|PD US HHS CDC|Scanning electron microscopic images of Streptococcus",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "Scanning Electron Micrograph of Streptococcus pneumoniae (Pneumococcus; Streptococci).",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<a rel=\"nofollow\" class=\"external free\" data-mw-original-href=\"http://phil.cdc.gov\" href=\"https://phil.cdc.gov\">http://phil.cdc.gov</a> (with identification number: 263)",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "Janice Haney Carr",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "Public domain",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Public domain",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "false",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Copyrighted": {
+          "value": "False",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "pd",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "Burkholderia_cepacia.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Burkholderia_cepacia.jpg",
+    "path": "/workspace/lab4/data/raw/s03.jpg",
+    "bytes": 1013317,
+    "metadata": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Burkholderia_cepacia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionurl": "https://commons.wikimedia.org/wiki/File:Burkholderia_cepacia.jpg",
+      "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=2208169",
+      "extmetadata": {
+        "DateTime": {
+          "value": "2010-11-19 08:41:50",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Burkholderia cepacia",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Images from the CDC Public Health Image Library|PD US HHS CDC|Burkholderia cepacia|Scanning electron microscopic images of bacteria",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "Scanning Electron Micrograph of Burkholderia cepacia",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<table class=\"layouttemplate sourcetemplate\" style=\"width:100%; clear:both; text-align:center; margin:0.5em auto; box-sizing: border-box; padding: 0; border-spacing: 8px; background-color: var(--background-color-neutral-subtle, #f6f7f5); color: var(--color-base, #202122); border: var(--border-subtle, 1px solid #555555);\" dir=\"ltr\" lang=\"en\">\n<tbody><tr>\n<td><span typeof=\"mw:File\"><span><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/US_CDC_logo.svg/120px-US_CDC_logo.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"100\" height=\"76\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/US_CDC_logo.svg/250px-US_CDC_logo.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"723\" data-file-height=\"546\"></span></span>\n</td>\n<td><span class=\"layouttemplateargs\" style=\"display:none;speak:none;\" title=\"template=CDC-PHIL id%3D255\"> </span>\n<p>This media comes from the <a href=\"https://en.wikipedia.org/wiki/Centers_for_Disease_Control_and_Prevention\" class=\"extiw\" title=\"w:Centers for Disease Control and Prevention\">Centers for Disease Control and Prevention</a>'s <a rel=\"nofollow\" class=\"external text\" href=\"https://phil.cdc.gov/\">Public Health Image Library</a> (PHIL), with identification number <b><a rel=\"nofollow\" class=\"external text\" href=\"https://phil.cdc.gov/details.aspx?pid=255\">#255</a></b>.\n</p>\n<div style=\"font-size:smaller;\">\n<p><b>Note:</b> Not all PHIL images are public domain; be sure to check copyright status and credit authors and content providers.\n</p>\n</div>\n<hr>\n<p><span style=\"font-size:x-small;line-height:140%\" class=\"plainlinks noprint\"><a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:CDC-PHIL/i18n/ar\" href=\"https://commons.wikimedia.org/wiki/Template:CDC-PHIL/i18n/ar\">العربية</a> | <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:CDC-PHIL/i18n/de\" href=\"https://commons.wikimedia.org/wiki/Template:CDC-PHIL/i18n/de\">Deutsch</a> | <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:CDC-PHIL/i18n/en\" href=\"https://commons.wikimedia.org/wiki/Template:CDC-PHIL/i18n/en\">English</a> | <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:CDC-PHIL/i18n/mk\" href=\"https://commons.wikimedia.org/wiki/Template:CDC-PHIL/i18n/mk\">македонски</a> | <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:CDC-PHIL/i18n/sl\" href=\"https://commons.wikimedia.org/wiki/Template:CDC-PHIL/i18n/sl\">slovenščina</a> | <small class=\"plainlinks\"><a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/w/index.php?title=Template:CDC-PHIL/lang&amp;action=edit\" href=\"https://commons.wikimedia.org/w/index.php?title=Template:CDC-PHIL/lang&amp;action=edit\">+/−</a></small></span>\n</p>\n</td></tr></tbody></table>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<ul><li>Photo Credit: CDC/Janice Carr</li>\n<li>Content Providers: CDC/Janice Carr</li></ul>",
+          "source": "commons-desc-page"
+        },
+        "Permission": {
+          "value": "None - This image is in the public domain and thus free of any copyright restrictions. As a matter of courtesy we request that the content provider be credited and notified in any public or private usage of this image.",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseShortName": {
+          "value": "Public domain",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Public domain",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "false",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Copyrighted": {
+          "value": "False",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "pd",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "Bordetella_bronchiseptica_01.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/08/Bordetella_bronchiseptica_01.jpg",
+    "path": "/workspace/lab4/data/raw/s04.jpg",
+    "bytes": 2222707,
+    "metadata": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/08/Bordetella_bronchiseptica_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionurl": "https://commons.wikimedia.org/wiki/File:Bordetella_bronchiseptica_01.jpg",
+      "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=1863696",
+      "extmetadata": {
+        "DateTime": {
+          "value": "2009-03-30 22:27:59",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Bordetella bronchiseptica 01",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Bordetella bronchiseptica|Images from the CDC Public Health Image Library|PD US HHS CDC|Scanning electron microscopic images of bacteria",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "This scanning electron micrograph (SEM) depicted a number of Gram-negative <a href=\"https://en.wikipedia.org/wiki/Bordetella_bronchiseptica\" class=\"extiw\" title=\"en:Bordetella bronchiseptica\">Bordetella bronchiseptica</a> coccobacilli bacteria. This organism is commonly found to be the cause of respiratory tract infections in dogs, as well as human beings whose immune system had been compromised including those who are infected by the HIV virus.\n<ul><li>Genetically very similar and closely related to B. pertussis, which is evidenced in the fact that it too possesses the gene to express pertussis toxin, this Bordetella member does not produce the toxin like its fellow genus member. This bacterium can cause a wide range of sympomts, including mild respiratory illnesses such as rhinitis, to those indicative of full-blown pneumonia, with accompanying “pertussis-like” manifestations, especially in immunocompromised individuals, as in the case of those with an HIV infection.</li></ul>",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<table class=\"layouttemplate sourcetemplate\" style=\"width:100%; clear:both; text-align:center; margin:0.5em auto; box-sizing: border-box; padding: 0; border-spacing: 8px; background-color: var(--background-color-neutral-subtle, #f6f7f5); color: var(--color-base, #202122); border: var(--border-subtle, 1px solid #555555);\" dir=\"ltr\" lang=\"en\">\n<tbody><tr>\n<td><span typeof=\"mw:File\"><span><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/US_CDC_logo.svg/120px-US_CDC_logo.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"100\" height=\"76\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/US_CDC_logo.svg/250px-US_CDC_logo.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"723\" data-file-height=\"546\"></span></span>\n</td>\n<td><span class=\"layouttemplateargs\" style=\"display:none;speak:none;\" title=\"template=CDC-PHIL id%3D254\"> </span>\n<p>This media comes from the <a href=\"https://en.wikipedia.org/wiki/Centers_for_Disease_Control_and_Prevention\" class=\"extiw\" title=\"w:Centers for Disease Control and Prevention\">Centers for Disease Control and Prevention</a>'s <a rel=\"nofollow\" class=\"external text\" href=\"https://phil.cdc.gov/\">Public Health Image Library</a> (PHIL), with identification number <b><a rel=\"nofollow\" class=\"external text\" href=\"https://phil.cdc.gov/details.aspx?pid=254\">#254</a></b>.\n</p>\n<div style=\"font-size:smaller;\">\n<p><b>Note:</b> Not all PHIL images are public domain; be sure to check copyright status and credit authors and content providers.\n</p>\n</div>\n<hr>\n<p><span style=\"font-size:x-small;line-height:140%\" class=\"plainlinks noprint\"><a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:CDC-PHIL/i18n/ar\" href=\"https://commons.wikimedia.org/wiki/Template:CDC-PHIL/i18n/ar\">العربية</a> | <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:CDC-PHIL/i18n/de\" href=\"https://commons.wikimedia.org/wiki/Template:CDC-PHIL/i18n/de\">Deutsch</a> | <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:CDC-PHIL/i18n/en\" href=\"https://commons.wikimedia.org/wiki/Template:CDC-PHIL/i18n/en\">English</a> | <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:CDC-PHIL/i18n/mk\" href=\"https://commons.wikimedia.org/wiki/Template:CDC-PHIL/i18n/mk\">македонски</a> | <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:CDC-PHIL/i18n/sl\" href=\"https://commons.wikimedia.org/wiki/Template:CDC-PHIL/i18n/sl\">slovenščina</a> | <small class=\"plainlinks\"><a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/w/index.php?title=Template:CDC-PHIL/lang&amp;action=edit\" href=\"https://commons.wikimedia.org/w/index.php?title=Template:CDC-PHIL/lang&amp;action=edit\">+/−</a></small></span>\n</p>\n</td></tr></tbody></table>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<ul><li>Photo Credit: Janice Carr</li>\n<li>Content Providers(s):\tCDC/ Janice Carr</li></ul>",
+          "source": "commons-desc-page"
+        },
+        "Permission": {
+          "value": "None - This image is in the public domain and thus free of any copyright restrictions. As a matter of courtesy we request that the content provider be credited and notified in any public or private usage of this image.",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseShortName": {
+          "value": "Public domain",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Public domain",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "false",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Copyrighted": {
+          "value": "False",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "pd",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "Anthrax_color_enhanced_micrograph.JPG",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Anthrax_color_enhanced_micrograph.JPG",
+    "path": "/workspace/lab4/data/raw/s05.jpg",
+    "bytes": 677000,
+    "metadata": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Anthrax_color_enhanced_micrograph.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionurl": "https://commons.wikimedia.org/wiki/File:Anthrax_color_enhanced_micrograph.JPG",
+      "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=2555012",
+      "extmetadata": {
+        "DateTime": {
+          "value": "2007-08-13 03:12:40",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Anthrax color enhanced micrograph",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Bacillus anthracis|PD US Government|Files with no machine-readable author|Files with no machine-readable source|Media missing infobox template|CC-PD-Mark|Microscopic images of Bacillus",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "LicenseShortName": {
+          "value": "Public domain",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Public domain",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "false",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Copyrighted": {
+          "value": "False",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "pd",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "E._coli_Bacteria_(16578744517).jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/d5/E._coli_Bacteria_%2816578744517%29.jpg",
+    "path": "/workspace/lab4/data/raw/s06.jpg",
+    "bytes": 3225406,
+    "metadata": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d5/E._coli_Bacteria_%2816578744517%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionurl": "https://commons.wikimedia.org/wiki/File:E._coli_Bacteria_(16578744517).jpg",
+      "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=39933077",
+      "extmetadata": {
+        "DateTime": {
+          "value": "2015-05-03 00:52:05",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "E. coli Bacteria (16578744517)",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Images with extracted images|Flickr images reviewed by FlickreviewR|Files from NIAID Flickr stream|Flickr images missing SDC Flickr photo ID|Flickr images missing SDC published in|Scanning electron microscopic images of Escherichia coli",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "Colorized scanning electron micrograph of Escherichia coli, grown in culture and adhered to a cover slip.",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "2013-12-18 15:11",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/niaid/16578744517/\">E. coli Bacteria</a>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/54591706@N02\">NIAID</a>",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "CC BY 2.0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Attribution 2.0",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "true",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "https://creativecommons.org/licenses/by/2.0",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc-by-2.0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "Streptococcus_Pyogenes_(Group_A_Strep)_(52602981880).jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Streptococcus_Pyogenes_%28Group_A_Strep%29_%2852602981880%29.jpg",
+    "path": "/workspace/lab4/data/raw/s07.jpg",
+    "bytes": 1173801,
+    "metadata": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Streptococcus_Pyogenes_%28Group_A_Strep%29_%2852602981880%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionurl": "https://commons.wikimedia.org/wiki/File:Streptococcus_Pyogenes_(Group_A_Strep)_(52602981880).jpg",
+      "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=127398449",
+      "extmetadata": {
+        "DateTime": {
+          "value": "2023-01-05 03:02:08",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Streptococcus Pyogenes (Group A Strep) (52602981880)",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Streptococcus pyogenes|Flickr images reviewed by FlickreviewR 2|Scanning electron microscopic images of Streptococcus",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "Colorized scanning electron micrograph of Group A <i>Streptococcus (Streptococcus pyogenes) </i> bacteria (yellow) and a human neutrophil (blue). Credit: NIAID",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "2022-12-29 18:13",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/niaid/52602981880/\">Streptococcus Pyogenes (Group A Strep)</a>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/54591706@N02\">NIAID</a>",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "CC BY 2.0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Attribution 2.0",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "true",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "https://creativecommons.org/licenses/by/2.0",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc-by-2.0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "Group_A_Streptococcus_Bacteria_on_Human_Neutrophil_(8517040030).jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Group_A_Streptococcus_Bacteria_on_Human_Neutrophil_%288517040030%29.jpg",
+    "path": "/workspace/lab4/data/raw/s08.jpg",
+    "bytes": 273664,
+    "metadata": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Group_A_Streptococcus_Bacteria_on_Human_Neutrophil_%288517040030%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionurl": "https://commons.wikimedia.org/wiki/File:Group_A_Streptococcus_Bacteria_on_Human_Neutrophil_(8517040030).jpg",
+      "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=39933165",
+      "extmetadata": {
+        "DateTime": {
+          "value": "2015-05-03 00:56:01",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Group A Streptococcus Bacteria on Human Neutrophil (8517040030)",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Flickr images reviewed by FlickreviewR|Files from NIAID Flickr stream|Scanning electron microscopic images of Streptococcus|Flickr images missing SDC published in",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "Scanning electron micrograph of Group A Streptococcus bacteria on primary human neutrophil. Credit: NIAID",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "2009-11-30 10:08",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/niaid/8517040030/\">Group A Streptococcus Bacteria on Human Neutrophil</a>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/54591706@N02\">NIAID</a>",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "CC BY 2.0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Attribution 2.0",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "true",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "https://creativecommons.org/licenses/by/2.0",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc-by-2.0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "Klebsiella_pneumonia_Bacterium_(13383560994).jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Klebsiella_pneumonia_Bacterium_%2813383560994%29.jpg",
+    "path": "/workspace/lab4/data/raw/s09.jpg",
+    "bytes": 941642,
+    "metadata": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Klebsiella_pneumonia_Bacterium_%2813383560994%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionurl": "https://commons.wikimedia.org/wiki/File:Klebsiella_pneumonia_Bacterium_(13383560994).jpg",
+      "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=39933142",
+      "extmetadata": {
+        "DateTime": {
+          "value": "2015-05-03 00:55:14",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Klebsiella pneumonia Bacterium (13383560994)",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Klebsiella pneumoniae|Flickr images reviewed by FlickreviewR|Files from NIAID Flickr stream|Flickr images missing SDC published in",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "Colorized scanning electron micrograph showing carbapenem-resistant Klebsiella pneumoniae interacting with a human neutrophil.",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "2014-02-14 15:57",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/niaid/13383560994/\">Klebsiella pneumonia Bacterium</a>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/54591706@N02\">NIAID</a>",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "CC BY 2.0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Attribution 2.0",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "true",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "https://creativecommons.org/licenses/by/2.0",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc-by-2.0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "Коломенское_москва_река_бактерии_–_копия.webm",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/8/86/%D0%9A%D0%BE%D0%BB%D0%BE%D0%BC%D0%B5%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0_%D1%80%D0%B5%D0%BA%D0%B0_%D0%B1%D0%B0%D0%BA%D1%82%D0%B5%D1%80%D0%B8%D0%B8_%E2%80%93_%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.webm",
+    "error": "HTTP Error 404: Not Found"
+  }
+]

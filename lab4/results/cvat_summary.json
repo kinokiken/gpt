@@ -1,0 +1,9 @@
+{
+  "images": 7,
+  "predicted_objects": 7,
+  "keypoint_shapes": 35,
+  "format": "CVAT for images 1.1; grouped box and five point labels",
+  "xml_parsing_and_coordinates_validated": true,
+  "online_import": "not executed; no authenticated CVAT session",
+  "human_review": "preannotations must be reviewed in CVAT"
+}

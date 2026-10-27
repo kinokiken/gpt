@@ -1,0 +1,88 @@
+{
+  "pose_control_bus.jpg": {
+    "detections": 4,
+    "keypoints_per_detection": 17
+  },
+  "pose_control_s06_640.png": {
+    "detections": 1,
+    "keypoints_per_detection": 17
+  },
+  "MediaPipe": {
+    "people": 1,
+    "landmarks_per_person": 33,
+    "delegate": "CPU"
+  },
+  "YOLO_World": [
+    {
+      "source": "s03",
+      "confidence_threshold": 0.1,
+      "detections": 0,
+      "time_s": 0.276371546000064,
+      "boxes_xyxy": [],
+      "confidences": []
+    },
+    {
+      "source": "s03",
+      "confidence_threshold": 0.25,
+      "detections": 0,
+      "time_s": 0.12478212899986829,
+      "boxes_xyxy": [],
+      "confidences": []
+    },
+    {
+      "source": "s04",
+      "confidence_threshold": 0.1,
+      "detections": 0,
+      "time_s": 0.17816196299986586,
+      "boxes_xyxy": [],
+      "confidences": []
+    },
+    {
+      "source": "s04",
+      "confidence_threshold": 0.25,
+      "detections": 0,
+      "time_s": 0.1392159009999432,
+      "boxes_xyxy": [],
+      "confidences": []
+    },
+    {
+      "source": "s06",
+      "confidence_threshold": 0.1,
+      "detections": 0,
+      "time_s": 0.1797900720000598,
+      "boxes_xyxy": [],
+      "confidences": []
+    },
+    {
+      "source": "s06",
+      "confidence_threshold": 0.25,
+      "detections": 0,
+      "time_s": 0.1634037740000167,
+      "boxes_xyxy": [],
+      "confidences": []
+    }
+  ],
+  "CLIPSeg": [
+    {
+      "prompt": "bacteria",
+      "threshold": 0.5,
+      "foreground_fraction": 0.0
+    },
+    {
+      "prompt": "rod shaped bacteria",
+      "threshold": 0.5,
+      "foreground_fraction": 0.8834975701943845
+    },
+    {
+      "prompt": "background",
+      "threshold": 0.5,
+      "foreground_fraction": 0.0006276997840172786
+    }
+  ],
+  "Real_ESRGAN": {
+    "PSNR": 22.259958210475766,
+    "SSIM": 0.6155435209237271,
+    "model_source": "https://huggingface.co/ai-forever/Real-ESRGAN",
+    "architecture": "RRDB 23 blocks, x4; parameter-name mapping with strict loading"
+  }
+}

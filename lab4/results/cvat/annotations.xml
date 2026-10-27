@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='utf-8'?>
+<annotations>
+  <version>1.1</version>
+  <meta>
+    <task>
+      <name>Andreev_Lab4_pose_predictions</name>
+      <size>7</size>
+      <mode>annotation</mode>
+      <labels>
+        <label>
+          <name>bacterium</name>
+          <color>#00ff00</color>
+          <type>rectangle</type>
+          <attributes />
+        </label>
+        <label>
+          <name>p1</name>
+          <color>#ff0000</color>
+          <type>points</type>
+          <attributes />
+        </label>
+        <label>
+          <name>p2</name>
+          <color>#ff0000</color>
+          <type>points</type>
+          <attributes />
+        </label>
+        <label>
+          <name>p3</name>
+          <color>#ff0000</color>
+          <type>points</type>
+          <attributes />
+        </label>
+        <label>
+          <name>p4</name>
+          <color>#ff0000</color>
+          <type>points</type>
+          <attributes />
+        </label>
+        <label>
+          <name>p5</name>
+          <color>#ff0000</color>
+          <type>points</type>
+          <attributes />
+        </label>
+      </labels>
+    </task>
+  </meta>
+  <image id="0" name="s04_00.jpg" width="256" height="256">
+    <box label="bacterium" source="auto" occluded="0" xtl="51.762" ytl="74.886" xbr="204.644" ybr="176.278" z_order="0" group_id="1" />
+    <points label="p1" source="auto" occluded="0" points="71.923,135.456" z_order="0" group_id="1" />
+    <points label="p2" source="auto" occluded="0" points="95.300,140.473" z_order="0" group_id="1" />
+    <points label="p3" source="auto" occluded="0" points="117.888,139.375" z_order="0" group_id="1" />
+    <points label="p4" source="auto" occluded="0" points="149.812,100.120" z_order="0" group_id="1" />
+    <points label="p5" source="auto" occluded="0" points="179.852,92.009" z_order="0" group_id="1" />
+  </image>
+  <image id="1" name="s04_01.jpg" width="256" height="256">
+    <box label="bacterium" source="auto" occluded="0" xtl="52.651" ytl="66.199" xbr="204.800" ybr="193.771" z_order="0" group_id="101" />
+    <points label="p1" source="auto" occluded="0" points="77.166,144.557" z_order="0" group_id="101" />
+    <points label="p2" source="auto" occluded="0" points="103.016,118.933" z_order="0" group_id="101" />
+    <points label="p3" source="auto" occluded="0" points="107.997,132.853" z_order="0" group_id="101" />
+    <points label="p4" source="auto" occluded="0" points="121.646,100.411" z_order="0" group_id="101" />
+    <points label="p5" source="auto" occluded="0" points="147.327,71.741" z_order="0" group_id="101" />
+  </image>
+  <image id="2" name="s04_02.jpg" width="256" height="256">
+    <box label="bacterium" source="auto" occluded="0" xtl="60.412" ytl="95.080" xbr="198.325" ybr="166.078" z_order="0" group_id="201" />
+    <points label="p1" source="auto" occluded="0" points="62.981,129.748" z_order="0" group_id="201" />
+    <points label="p2" source="auto" occluded="0" points="105.780,130.264" z_order="0" group_id="201" />
+    <points label="p3" source="auto" occluded="0" points="121.658,139.130" z_order="0" group_id="201" />
+    <points label="p4" source="auto" occluded="0" points="141.147,124.020" z_order="0" group_id="201" />
+    <points label="p5" source="auto" occluded="0" points="151.866,129.442" z_order="0" group_id="201" />
+  </image>
+  <image id="3" name="s04_03.jpg" width="256" height="256">
+    <box label="bacterium" source="auto" occluded="0" xtl="72.652" ytl="65.816" xbr="187.491" ybr="191.265" z_order="0" group_id="301" />
+    <points label="p1" source="auto" occluded="0" points="75.789,139.685" z_order="0" group_id="301" />
+    <points label="p2" source="auto" occluded="0" points="107.190,122.621" z_order="0" group_id="301" />
+    <points label="p3" source="auto" occluded="0" points="104.104,137.497" z_order="0" group_id="301" />
+    <points label="p4" source="auto" occluded="0" points="119.338,93.402" z_order="0" group_id="301" />
+    <points label="p5" source="auto" occluded="0" points="150.176,74.126" z_order="0" group_id="301" />
+  </image>
+  <image id="4" name="s04_04.jpg" width="256" height="256">
+    <box label="bacterium" source="auto" occluded="0" xtl="102.093" ytl="56.658" xbr="155.657" ybr="199.731" z_order="0" group_id="401" />
+    <points label="p1" source="auto" occluded="0" points="120.341,106.132" z_order="0" group_id="401" />
+    <points label="p2" source="auto" occluded="0" points="116.940,107.974" z_order="0" group_id="401" />
+    <points label="p3" source="auto" occluded="0" points="128.590,115.375" z_order="0" group_id="401" />
+    <points label="p4" source="auto" occluded="0" points="129.084,117.360" z_order="0" group_id="401" />
+    <points label="p5" source="auto" occluded="0" points="139.587,105.078" z_order="0" group_id="401" />
+  </image>
+  <image id="5" name="s09_00.jpg" width="256" height="256">
+    <box label="bacterium" source="auto" occluded="0" xtl="40.531" ytl="32.510" xbr="217.170" ybr="226.906" z_order="0" group_id="501" />
+    <points label="p1" source="auto" occluded="0" points="110.151,157.038" z_order="0" group_id="501" />
+    <points label="p2" source="auto" occluded="0" points="130.943,133.112" z_order="0" group_id="501" />
+    <points label="p3" source="auto" occluded="0" points="130.156,134.717" z_order="0" group_id="501" />
+    <points label="p4" source="auto" occluded="0" points="143.356,89.404" z_order="0" group_id="501" />
+    <points label="p5" source="auto" occluded="0" points="179.892,58.673" z_order="0" group_id="501" />
+  </image>
+  <image id="6" name="s09_01.jpg" width="256" height="256">
+    <box label="bacterium" source="auto" occluded="0" xtl="49.500" ytl="30.861" xbr="205.494" ybr="228.724" z_order="0" group_id="601" />
+    <points label="p1" source="auto" occluded="0" points="118.169,161.847" z_order="0" group_id="601" />
+    <points label="p2" source="auto" occluded="0" points="112.424,138.494" z_order="0" group_id="601" />
+    <points label="p3" source="auto" occluded="0" points="136.206,113.269" z_order="0" group_id="601" />
+    <points label="p4" source="auto" occluded="0" points="172.719,91.157" z_order="0" group_id="601" />
+    <points label="p5" source="auto" occluded="0" points="204.503,82.911" z_order="0" group_id="601" />
+  </image>
+</annotations>

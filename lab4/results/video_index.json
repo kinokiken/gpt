@@ -1,0 +1,164 @@
+[
+  {
+    "frame": 0,
+    "seconds": 0.0,
+    "path": "/workspace/lab4/data/frames/frame_000000.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%BE%D0%BB%D0%BE%D0%BC%D0%B5%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0_%D1%80%D0%B5%D0%BA%D0%B0_%D0%B1%D0%B0%D0%BA%D1%82%D0%B5%D1%80%D0%B8%D0%B8_%E2%80%94_%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.webm"
+  },
+  {
+    "frame": 50,
+    "seconds": 2.0,
+    "path": "/workspace/lab4/data/frames/frame_000050.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%BE%D0%BB%D0%BE%D0%BC%D0%B5%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0_%D1%80%D0%B5%D0%BA%D0%B0_%D0%B1%D0%B0%D0%BA%D1%82%D0%B5%D1%80%D0%B8%D0%B8_%E2%80%94_%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.webm"
+  },
+  {
+    "frame": 100,
+    "seconds": 4.0,
+    "path": "/workspace/lab4/data/frames/frame_000100.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%BE%D0%BB%D0%BE%D0%BC%D0%B5%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0_%D1%80%D0%B5%D0%BA%D0%B0_%D0%B1%D0%B0%D0%BA%D1%82%D0%B5%D1%80%D0%B8%D0%B8_%E2%80%94_%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.webm"
+  },
+  {
+    "frame": 150,
+    "seconds": 6.0,
+    "path": "/workspace/lab4/data/frames/frame_000150.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%BE%D0%BB%D0%BE%D0%BC%D0%B5%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0_%D1%80%D0%B5%D0%BA%D0%B0_%D0%B1%D0%B0%D0%BA%D1%82%D0%B5%D1%80%D0%B8%D0%B8_%E2%80%94_%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.webm"
+  },
+  {
+    "frame": 200,
+    "seconds": 8.0,
+    "path": "/workspace/lab4/data/frames/frame_000200.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%BE%D0%BB%D0%BE%D0%BC%D0%B5%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0_%D1%80%D0%B5%D0%BA%D0%B0_%D0%B1%D0%B0%D0%BA%D1%82%D0%B5%D1%80%D0%B8%D0%B8_%E2%80%94_%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.webm"
+  },
+  {
+    "frame": 250,
+    "seconds": 10.0,
+    "path": "/workspace/lab4/data/frames/frame_000250.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%BE%D0%BB%D0%BE%D0%BC%D0%B5%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0_%D1%80%D0%B5%D0%BA%D0%B0_%D0%B1%D0%B0%D0%BA%D1%82%D0%B5%D1%80%D0%B8%D0%B8_%E2%80%94_%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.webm"
+  },
+  {
+    "frame": 300,
+    "seconds": 12.0,
+    "path": "/workspace/lab4/data/frames/frame_000300.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%BE%D0%BB%D0%BE%D0%BC%D0%B5%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0_%D1%80%D0%B5%D0%BA%D0%B0_%D0%B1%D0%B0%D0%BA%D1%82%D0%B5%D1%80%D0%B8%D0%B8_%E2%80%94_%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.webm"
+  },
+  {
+    "frame": 350,
+    "seconds": 14.0,
+    "path": "/workspace/lab4/data/frames/frame_000350.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%BE%D0%BB%D0%BE%D0%BC%D0%B5%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0_%D1%80%D0%B5%D0%BA%D0%B0_%D0%B1%D0%B0%D0%BA%D1%82%D0%B5%D1%80%D0%B8%D0%B8_%E2%80%94_%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.webm"
+  },
+  {
+    "frame": 400,
+    "seconds": 16.0,
+    "path": "/workspace/lab4/data/frames/frame_000400.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%BE%D0%BB%D0%BE%D0%BC%D0%B5%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0_%D1%80%D0%B5%D0%BA%D0%B0_%D0%B1%D0%B0%D0%BA%D1%82%D0%B5%D1%80%D0%B8%D0%B8_%E2%80%94_%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.webm"
+  },
+  {
+    "frame": 450,
+    "seconds": 18.0,
+    "path": "/workspace/lab4/data/frames/frame_000450.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%BE%D0%BB%D0%BE%D0%BC%D0%B5%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0_%D1%80%D0%B5%D0%BA%D0%B0_%D0%B1%D0%B0%D0%BA%D1%82%D0%B5%D1%80%D0%B8%D0%B8_%E2%80%94_%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.webm"
+  },
+  {
+    "frame": 500,
+    "seconds": 20.0,
+    "path": "/workspace/lab4/data/frames/frame_000500.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%BE%D0%BB%D0%BE%D0%BC%D0%B5%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0_%D1%80%D0%B5%D0%BA%D0%B0_%D0%B1%D0%B0%D0%BA%D1%82%D0%B5%D1%80%D0%B8%D0%B8_%E2%80%94_%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.webm"
+  },
+  {
+    "frame": 550,
+    "seconds": 22.0,
+    "path": "/workspace/lab4/data/frames/frame_000550.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%BE%D0%BB%D0%BE%D0%BC%D0%B5%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0_%D1%80%D0%B5%D0%BA%D0%B0_%D0%B1%D0%B0%D0%BA%D1%82%D0%B5%D1%80%D0%B8%D0%B8_%E2%80%94_%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.webm"
+  },
+  {
+    "frame": 600,
+    "seconds": 24.0,
+    "path": "/workspace/lab4/data/frames/frame_000600.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%BE%D0%BB%D0%BE%D0%BC%D0%B5%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0_%D1%80%D0%B5%D0%BA%D0%B0_%D0%B1%D0%B0%D0%BA%D1%82%D0%B5%D1%80%D0%B8%D0%B8_%E2%80%94_%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.webm"
+  },
+  {
+    "frame": 650,
+    "seconds": 26.0,
+    "path": "/workspace/lab4/data/frames/frame_000650.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%BE%D0%BB%D0%BE%D0%BC%D0%B5%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0_%D1%80%D0%B5%D0%BA%D0%B0_%D0%B1%D0%B0%D0%BA%D1%82%D0%B5%D1%80%D0%B8%D0%B8_%E2%80%94_%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.webm"
+  },
+  {
+    "frame": 700,
+    "seconds": 28.0,
+    "path": "/workspace/lab4/data/frames/frame_000700.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%BE%D0%BB%D0%BE%D0%BC%D0%B5%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0_%D1%80%D0%B5%D0%BA%D0%B0_%D0%B1%D0%B0%D0%BA%D1%82%D0%B5%D1%80%D0%B8%D0%B8_%E2%80%94_%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.webm"
+  },
+  {
+    "frame": 750,
+    "seconds": 30.0,
+    "path": "/workspace/lab4/data/frames/frame_000750.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%BE%D0%BB%D0%BE%D0%BC%D0%B5%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0_%D1%80%D0%B5%D0%BA%D0%B0_%D0%B1%D0%B0%D0%BA%D1%82%D0%B5%D1%80%D0%B8%D0%B8_%E2%80%94_%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.webm"
+  },
+  {
+    "frame": 800,
+    "seconds": 32.0,
+    "path": "/workspace/lab4/data/frames/frame_000800.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%BE%D0%BB%D0%BE%D0%BC%D0%B5%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0_%D1%80%D0%B5%D0%BA%D0%B0_%D0%B1%D0%B0%D0%BA%D1%82%D0%B5%D1%80%D0%B8%D0%B8_%E2%80%94_%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.webm"
+  },
+  {
+    "frame": 850,
+    "seconds": 34.0,
+    "path": "/workspace/lab4/data/frames/frame_000850.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%BE%D0%BB%D0%BE%D0%BC%D0%B5%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0_%D1%80%D0%B5%D0%BA%D0%B0_%D0%B1%D0%B0%D0%BA%D1%82%D0%B5%D1%80%D0%B8%D0%B8_%E2%80%94_%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.webm"
+  },
+  {
+    "frame": 900,
+    "seconds": 36.0,
+    "path": "/workspace/lab4/data/frames/frame_000900.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%BE%D0%BB%D0%BE%D0%BC%D0%B5%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0_%D1%80%D0%B5%D0%BA%D0%B0_%D0%B1%D0%B0%D0%BA%D1%82%D0%B5%D1%80%D0%B8%D0%B8_%E2%80%94_%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.webm"
+  },
+  {
+    "frame": 950,
+    "seconds": 38.0,
+    "path": "/workspace/lab4/data/frames/frame_000950.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%BE%D0%BB%D0%BE%D0%BC%D0%B5%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0_%D1%80%D0%B5%D0%BA%D0%B0_%D0%B1%D0%B0%D0%BA%D1%82%D0%B5%D1%80%D0%B8%D0%B8_%E2%80%94_%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.webm"
+  },
+  {
+    "frame": 1000,
+    "seconds": 40.0,
+    "path": "/workspace/lab4/data/frames/frame_001000.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%BE%D0%BB%D0%BE%D0%BC%D0%B5%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0_%D1%80%D0%B5%D0%BA%D0%B0_%D0%B1%D0%B0%D0%BA%D1%82%D0%B5%D1%80%D0%B8%D0%B8_%E2%80%94_%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.webm"
+  },
+  {
+    "frame": 1050,
+    "seconds": 42.0,
+    "path": "/workspace/lab4/data/frames/frame_001050.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%BE%D0%BB%D0%BE%D0%BC%D0%B5%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0_%D1%80%D0%B5%D0%BA%D0%B0_%D0%B1%D0%B0%D0%BA%D1%82%D0%B5%D1%80%D0%B8%D0%B8_%E2%80%94_%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.webm"
+  },
+  {
+    "frame": 1100,
+    "seconds": 44.0,
+    "path": "/workspace/lab4/data/frames/frame_001100.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%BE%D0%BB%D0%BE%D0%BC%D0%B5%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0_%D1%80%D0%B5%D0%BA%D0%B0_%D0%B1%D0%B0%D0%BA%D1%82%D0%B5%D1%80%D0%B8%D0%B8_%E2%80%94_%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.webm"
+  },
+  {
+    "frame": 1150,
+    "seconds": 46.0,
+    "path": "/workspace/lab4/data/frames/frame_001150.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%BE%D0%BB%D0%BE%D0%BC%D0%B5%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0_%D1%80%D0%B5%D0%BA%D0%B0_%D0%B1%D0%B0%D0%BA%D1%82%D0%B5%D1%80%D0%B8%D0%B8_%E2%80%94_%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.webm"
+  },
+  {
+    "frame": 1200,
+    "seconds": 48.0,
+    "path": "/workspace/lab4/data/frames/frame_001200.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%BE%D0%BB%D0%BE%D0%BC%D0%B5%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0_%D1%80%D0%B5%D0%BA%D0%B0_%D0%B1%D0%B0%D0%BA%D1%82%D0%B5%D1%80%D0%B8%D0%B8_%E2%80%94_%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.webm"
+  },
+  {
+    "frame": 1250,
+    "seconds": 50.0,
+    "path": "/workspace/lab4/data/frames/frame_001250.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%BE%D0%BB%D0%BE%D0%BC%D0%B5%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0_%D1%80%D0%B5%D0%BA%D0%B0_%D0%B1%D0%B0%D0%BA%D1%82%D0%B5%D1%80%D0%B8%D0%B8_%E2%80%94_%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.webm"
+  },
+  {
+    "frame": 1300,
+    "seconds": 52.0,
+    "path": "/workspace/lab4/data/frames/frame_001300.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%BE%D0%BB%D0%BE%D0%BC%D0%B5%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0_%D1%80%D0%B5%D0%BA%D0%B0_%D0%B1%D0%B0%D0%BA%D1%82%D0%B5%D1%80%D0%B8%D0%B8_%E2%80%94_%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.webm"
+  }
+]

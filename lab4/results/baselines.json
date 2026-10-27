@@ -1,0 +1,108 @@
+{
+  "color_segmentation": {
+    "foreground_fraction": 0.7516333693304535,
+    "components_over_100px": 7,
+    "note": "Connected regions merge touching cells; not a bacteria count."
+  },
+  "resolution": {
+    "Nearest": {
+      "PSNR": 22.072396904251065,
+      "SSIM": 0.6808095909967958
+    },
+    "Bilinear": {
+      "PSNR": 22.87947271304471,
+      "SSIM": 0.6774875045241492
+    },
+    "Bicubic": {
+      "PSNR": 23.687514917727878,
+      "SSIM": 0.7167444875036063
+    }
+  },
+  "tracking": {
+    "MIL": {
+      "mean_IoU_sparse": 0.6645821545580199,
+      "success_IoU_05_sparse": 0.8,
+      "valid_fraction": 1.0,
+      "FPS": 21.838473722315623,
+      "reference_frames_excluding_init": 5,
+      "ious": [
+        0.3546954314720812,
+        0.829477292202228,
+        0.6791226645004061,
+        0.8846153846153846,
+        0.575
+      ]
+    },
+    "KCF": {
+      "mean_IoU_sparse": 0.0,
+      "success_IoU_05_sparse": 0.0,
+      "valid_fraction": 0.14864864864864866,
+      "FPS": 1037.6071601010406,
+      "reference_frames_excluding_init": 5,
+      "ious": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "CSRT": {
+      "mean_IoU_sparse": 0.8482769963475889,
+      "success_IoU_05_sparse": 1.0,
+      "valid_fraction": 1.0,
+      "FPS": 22.989195458700365,
+      "reference_frames_excluding_init": 5,
+      "ious": [
+        0.7630057803468208,
+        0.8630017452006981,
+        0.9174397031539888,
+        0.8133223684210527,
+        0.8846153846153846
+      ]
+    }
+  },
+  "flow": {
+    "Farneback_mean_vector_px": [
+      -0.018489303067326546,
+      0.1313190907239914
+    ],
+    "ROI_speed_px_s": 3.3153581619262695,
+    "Lucas_Kanade": {
+      "points_detected": 4,
+      "points_accepted": 4,
+      "mean_vector_px": [
+        -0.0566253662109375,
+        0.114776611328125
+      ]
+    },
+    "note": "No dense ground-truth flow; ROI includes local background."
+  },
+  "OCR": [
+    {
+      "variant": "color",
+      "returncode": 0,
+      "text": "30 um",
+      "reference": "30 μm"
+    },
+    {
+      "variant": "threshold",
+      "returncode": 0,
+      "text": "30um",
+      "reference": "30 μm"
+    }
+  ],
+  "MOG2": {
+    "foreground_fraction_frame0": 1.0,
+    "foreground_fraction_frame25": 0.017453703703703704,
+    "foreground_fraction_frame74": 0.025206404320987655,
+    "note": "Motion mask, not semantic segmentation."
+  },
+  "audio": {
+    "source": "synthetic two-tone control, not bacteria video audio",
+    "sample_rate": 16000,
+    "signal_Hz": 440,
+    "noise_Hz": 4000,
+    "cutoff_Hz": 1200
+  }
+}

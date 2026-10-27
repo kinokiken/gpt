@@ -1,0 +1,11 @@
+# Local Python environments and downloaded dependency caches
+__pycache__/
+*.pyc
+lab4/.venv/
+lab4/models/hf/
+lab4/models/torch/
+lab4/models/yolo_config/
+lab4/system-libs/
+lab4/mlflow/
+lab4/mlruns/
+lab4/*.log

@@ -1,0 +1,317 @@
+[
+  {
+    "id": "s01_00",
+    "source": "s01",
+    "class": 0,
+    "split": "train",
+    "image": "/workspace/lab4/data/gallery/s01_00.jpg"
+  },
+  {
+    "id": "s01_01",
+    "source": "s01",
+    "class": 0,
+    "split": "train",
+    "image": "/workspace/lab4/data/gallery/s01_01.jpg"
+  },
+  {
+    "id": "s01_02",
+    "source": "s01",
+    "class": 0,
+    "split": "train",
+    "image": "/workspace/lab4/data/gallery/s01_02.jpg"
+  },
+  {
+    "id": "s01_03",
+    "source": "s01",
+    "class": 0,
+    "split": "train",
+    "image": "/workspace/lab4/data/gallery/s01_03.jpg"
+  },
+  {
+    "id": "s01_04",
+    "source": "s01",
+    "class": 0,
+    "split": "train",
+    "image": "/workspace/lab4/data/gallery/s01_04.jpg"
+  },
+  {
+    "id": "s01_05",
+    "source": "s01",
+    "class": 0,
+    "split": "train",
+    "image": "/workspace/lab4/data/gallery/s01_05.jpg"
+  },
+  {
+    "id": "s03_00",
+    "source": "s03",
+    "class": 0,
+    "split": "val",
+    "image": "/workspace/lab4/data/gallery/s03_00.jpg"
+  },
+  {
+    "id": "s03_01",
+    "source": "s03",
+    "class": 0,
+    "split": "val",
+    "image": "/workspace/lab4/data/gallery/s03_01.jpg"
+  },
+  {
+    "id": "s03_02",
+    "source": "s03",
+    "class": 0,
+    "split": "val",
+    "image": "/workspace/lab4/data/gallery/s03_02.jpg"
+  },
+  {
+    "id": "s03_03",
+    "source": "s03",
+    "class": 0,
+    "split": "val",
+    "image": "/workspace/lab4/data/gallery/s03_03.jpg"
+  },
+  {
+    "id": "s04_00",
+    "source": "s04",
+    "class": 0,
+    "split": "test",
+    "image": "/workspace/lab4/data/gallery/s04_00.jpg"
+  },
+  {
+    "id": "s04_01",
+    "source": "s04",
+    "class": 0,
+    "split": "test",
+    "image": "/workspace/lab4/data/gallery/s04_01.jpg"
+  },
+  {
+    "id": "s04_02",
+    "source": "s04",
+    "class": 0,
+    "split": "test",
+    "image": "/workspace/lab4/data/gallery/s04_02.jpg"
+  },
+  {
+    "id": "s04_03",
+    "source": "s04",
+    "class": 0,
+    "split": "test",
+    "image": "/workspace/lab4/data/gallery/s04_03.jpg"
+  },
+  {
+    "id": "s04_04",
+    "source": "s04",
+    "class": 0,
+    "split": "test",
+    "image": "/workspace/lab4/data/gallery/s04_04.jpg"
+  },
+  {
+    "id": "s05_00",
+    "source": "s05",
+    "class": 0,
+    "split": "train",
+    "image": "/workspace/lab4/data/gallery/s05_00.jpg"
+  },
+  {
+    "id": "s05_01",
+    "source": "s05",
+    "class": 0,
+    "split": "train",
+    "image": "/workspace/lab4/data/gallery/s05_01.jpg"
+  },
+  {
+    "id": "s05_02",
+    "source": "s05",
+    "class": 0,
+    "split": "train",
+    "image": "/workspace/lab4/data/gallery/s05_02.jpg"
+  },
+  {
+    "id": "s05_03",
+    "source": "s05",
+    "class": 0,
+    "split": "train",
+    "image": "/workspace/lab4/data/gallery/s05_03.jpg"
+  },
+  {
+    "id": "s05_04",
+    "source": "s05",
+    "class": 0,
+    "split": "train",
+    "image": "/workspace/lab4/data/gallery/s05_04.jpg"
+  },
+  {
+    "id": "s05_05",
+    "source": "s05",
+    "class": 0,
+    "split": "train",
+    "image": "/workspace/lab4/data/gallery/s05_05.jpg"
+  },
+  {
+    "id": "s05_06",
+    "source": "s05",
+    "class": 0,
+    "split": "train",
+    "image": "/workspace/lab4/data/gallery/s05_06.jpg"
+  },
+  {
+    "id": "s05_07",
+    "source": "s05",
+    "class": 0,
+    "split": "train",
+    "image": "/workspace/lab4/data/gallery/s05_07.jpg"
+  },
+  {
+    "id": "s05_08",
+    "source": "s05",
+    "class": 0,
+    "split": "train",
+    "image": "/workspace/lab4/data/gallery/s05_08.jpg"
+  },
+  {
+    "id": "s06_00",
+    "source": "s06",
+    "class": 0,
+    "split": "train",
+    "image": "/workspace/lab4/data/gallery/s06_00.jpg"
+  },
+  {
+    "id": "s06_01",
+    "source": "s06",
+    "class": 0,
+    "split": "train",
+    "image": "/workspace/lab4/data/gallery/s06_01.jpg"
+  },
+  {
+    "id": "s06_02",
+    "source": "s06",
+    "class": 0,
+    "split": "train",
+    "image": "/workspace/lab4/data/gallery/s06_02.jpg"
+  },
+  {
+    "id": "s06_03",
+    "source": "s06",
+    "class": 0,
+    "split": "train",
+    "image": "/workspace/lab4/data/gallery/s06_03.jpg"
+  },
+  {
+    "id": "s06_04",
+    "source": "s06",
+    "class": 0,
+    "split": "train",
+    "image": "/workspace/lab4/data/gallery/s06_04.jpg"
+  },
+  {
+    "id": "s06_05",
+    "source": "s06",
+    "class": 0,
+    "split": "train",
+    "image": "/workspace/lab4/data/gallery/s06_05.jpg"
+  },
+  {
+    "id": "s06_06",
+    "source": "s06",
+    "class": 0,
+    "split": "train",
+    "image": "/workspace/lab4/data/gallery/s06_06.jpg"
+  },
+  {
+    "id": "s09_00",
+    "source": "s09",
+    "class": 0,
+    "split": "test",
+    "image": "/workspace/lab4/data/gallery/s09_00.jpg"
+  },
+  {
+    "id": "s09_01",
+    "source": "s09",
+    "class": 0,
+    "split": "test",
+    "image": "/workspace/lab4/data/gallery/s09_01.jpg"
+  },
+  {
+    "id": "s02_00",
+    "source": "s02",
+    "class": 1,
+    "split": "test",
+    "image": "/workspace/lab4/data/gallery/s02_00.jpg"
+  },
+  {
+    "id": "s02_01",
+    "source": "s02",
+    "class": 1,
+    "split": "test",
+    "image": "/workspace/lab4/data/gallery/s02_01.jpg"
+  },
+  {
+    "id": "s07_00",
+    "source": "s07",
+    "class": 1,
+    "split": "train",
+    "image": "/workspace/lab4/data/gallery/s07_00.jpg"
+  },
+  {
+    "id": "s07_01",
+    "source": "s07",
+    "class": 1,
+    "split": "train",
+    "image": "/workspace/lab4/data/gallery/s07_01.jpg"
+  },
+  {
+    "id": "s07_02",
+    "source": "s07",
+    "class": 1,
+    "split": "train",
+    "image": "/workspace/lab4/data/gallery/s07_02.jpg"
+  },
+  {
+    "id": "s07_03",
+    "source": "s07",
+    "class": 1,
+    "split": "train",
+    "image": "/workspace/lab4/data/gallery/s07_03.jpg"
+  },
+  {
+    "id": "s07_04",
+    "source": "s07",
+    "class": 1,
+    "split": "train",
+    "image": "/workspace/lab4/data/gallery/s07_04.jpg"
+  },
+  {
+    "id": "s07_05",
+    "source": "s07",
+    "class": 1,
+    "split": "train",
+    "image": "/workspace/lab4/data/gallery/s07_05.jpg"
+  },
+  {
+    "id": "s08_00",
+    "source": "s08",
+    "class": 1,
+    "split": "val",
+    "image": "/workspace/lab4/data/gallery/s08_00.jpg"
+  },
+  {
+    "id": "s08_01",
+    "source": "s08",
+    "class": 1,
+    "split": "val",
+    "image": "/workspace/lab4/data/gallery/s08_01.jpg"
+  },
+  {
+    "id": "s08_02",
+    "source": "s08",
+    "class": 1,
+    "split": "val",
+    "image": "/workspace/lab4/data/gallery/s08_02.jpg"
+  },
+  {
+    "id": "s08_03",
+    "source": "s08",
+    "class": 1,
+    "split": "val",
+    "image": "/workspace/lab4/data/gallery/s08_03.jpg"
+  }
+]

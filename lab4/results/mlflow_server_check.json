@@ -1,0 +1,6 @@
+{
+  "health_status": 200,
+  "health_body": "OK",
+  "experiments_api_status": 200,
+  "experiments_count": 2
+}

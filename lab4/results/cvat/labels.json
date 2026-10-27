@@ -1,0 +1,38 @@
+[
+  {
+    "name": "bacterium",
+    "type": "rectangle",
+    "color": "#00ff00",
+    "attributes": []
+  },
+  {
+    "name": "p1",
+    "type": "points",
+    "color": "#ff0000",
+    "attributes": []
+  },
+  {
+    "name": "p2",
+    "type": "points",
+    "color": "#ff0000",
+    "attributes": []
+  },
+  {
+    "name": "p3",
+    "type": "points",
+    "color": "#ff0000",
+    "attributes": []
+  },
+  {
+    "name": "p4",
+    "type": "points",
+    "color": "#ff0000",
+    "attributes": []
+  },
+  {
+    "name": "p5",
+    "type": "points",
+    "color": "#ff0000",
+    "attributes": []
+  }
+]
