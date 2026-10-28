@@ -1,0 +1,7 @@
+path: /workspace/gpt/lab4_treponema/data/final_pose
+train: images/train
+val: images/val
+test: images/test
+names: [treponema]
+kpt_shape: [3, 3]
+flip_idx: [2, 1, 0]

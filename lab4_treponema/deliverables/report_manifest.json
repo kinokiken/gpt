@@ -1,0 +1,203 @@
+{
+  "generator": "scripts/build_submission.py",
+  "network_requests": 0,
+  "figures": [
+    {
+      "path": "lab4_treponema/data/raw/treponema_primary.jpg",
+      "sha256": "fadf07868cdea56e41ffbae770be699744b0b707bd0944ab8348491ab4226445"
+    },
+    {
+      "path": "lab4_treponema/results/sources_contact.png",
+      "sha256": "258839b696c4854df915091730c31cbd5d8598c8c2645f2c3f039fea745d84e2"
+    },
+    {
+      "path": "lab4_treponema/results/final/human_pose.png",
+      "sha256": "d5827e547421be415ef6da3deb996b4aa3480ac0ff54dc9b3ec09b05889d4853"
+    },
+    {
+      "path": "lab4_treponema/results/final/mediapipe.png",
+      "sha256": "044a8e72d1d38b4afc3046b3cd07019e241860aeef9e2f16734780d130478b00"
+    },
+    {
+      "path": "lab4_treponema/results/final/skeleton_landmarks.png",
+      "sha256": "a426d3b02c22c30967906b44f82e39e32d3197d343bf9ba67055b0fb6965dc3a"
+    },
+    {
+      "path": "lab4_treponema/results/final/tracking_actual.png",
+      "sha256": "52bacc94f1aaf32bd2e17499cc746ea0fe849867890f30e8e47e256a0f2af0da"
+    },
+    {
+      "path": "lab4/results/tracking_reference_contact.png",
+      "sha256": "e14c20c93419fa5831dba49b58e574a0eb0c37ef452501a2eb58d0ef4562b4e3"
+    },
+    {
+      "path": "lab4/results/track_comparison.png",
+      "sha256": "2c399e0cb9a2c3599efe64e30d3a3f0a0c928de4a0bce8a5db255541bdbfca83"
+    },
+    {
+      "path": "lab4_treponema/results/final/distortion.png",
+      "sha256": "af43dd6e6f315128ff8496930ea4280831e905791cdd7b42789a9ff5dd0b0fe3"
+    },
+    {
+      "path": "lab4_treponema/results/final/flow_actual.png",
+      "sha256": "1529600ec130809c70200405308001d59acca1b261acc9a47111fdbec25224c3"
+    },
+    {
+      "path": "lab4_treponema/results/final/superresolution_actual.png",
+      "sha256": "18535ed4c21d3734ab3c269b10aa112fe1209d2c94dee608dd558fd21b722019"
+    },
+    {
+      "path": "lab4_treponema/results/final/ocr_comparison.png",
+      "sha256": "14795a6963288f7bd66e4d4b0258401f0735b8e0396a61c4e1da678b3dcf3f78"
+    },
+    {
+      "path": "lab4/results/ocr_input.png",
+      "sha256": "b2097b2b6bc0b96847aac8bc5398e171bdca1a499e184795991653cecaf2ea57"
+    },
+    {
+      "path": "lab4_treponema/results/final/filters.png",
+      "sha256": "2657486e33f00edfc75d65df9d045951ec002eede7ab3b23f7aa63b3a1383447"
+    },
+    {
+      "path": "lab4_treponema/results/final/foreground.png",
+      "sha256": "173be307180d36ad4d17220af4688041bf4c5665b683f87cb519533b8a5de4ce"
+    },
+    {
+      "path": "lab4_treponema/results/final/retrieval_text.png",
+      "sha256": "43d1f4e2c07175e3e57bcafbc9bfb02c76e1b2f423400aaf8c65034e6b303023"
+    },
+    {
+      "path": "lab4_treponema/results/final/retrieval_image.png",
+      "sha256": "f492cf96b2dc64701d5879777f021f4a6bd30bd41dac0d81f3c25174a8f16475"
+    },
+    {
+      "path": "lab4_treponema/results/final/triplet_learning.png",
+      "sha256": "012f1a413771de7c6d79012cda653ea95f5e7b8f99cdb376b9e2c7545221a287"
+    },
+    {
+      "path": "lab4_treponema/results/final/zero_actual.png",
+      "sha256": "af7c2524087e70740333432016e5456f3bc5029c4502b3ca1af9f5b66667ce3d"
+    },
+    {
+      "path": "lab4_treponema/results/final/rutube_author_1.png",
+      "sha256": "4853f5c3671d7e4430b1b27e69a5a76b246e3825165864ddd691a4c3e4c3ad22"
+    },
+    {
+      "path": "lab4_treponema/results/final/rutube_author_2.png",
+      "sha256": "b802ec52899261de6ee64d47cc9fa462db4b08036230ec67f19f472a52c03a69"
+    },
+    {
+      "path": "lab4_treponema/results/final/skeleton_landmarks.png",
+      "sha256": "a426d3b02c22c30967906b44f82e39e32d3197d343bf9ba67055b0fb6965dc3a"
+    },
+    {
+      "path": "lab4_treponema/results/final/mlflow_actual.png",
+      "sha256": "175bc71d360ab0220855303e455821dfa6d47c32302030cb98aa3124cb2e1e25"
+    },
+    {
+      "path": "lab4_treponema/results/final/pose_dataset.png",
+      "sha256": "6f05ac3c2b56ae810a392506d98c57ff3e6646e8c2ee93010394bbb00af49277"
+    },
+    {
+      "path": "lab4_treponema/results/final/pose_learning.png",
+      "sha256": "0a0cafb92a2365de0fe32d59d58d5491ec1876f8e0436cba62ef7820cd36dcde"
+    },
+    {
+      "path": "lab4_treponema/results/final/pose_predictions.png",
+      "sha256": "a98d8906619ac447f9beb42516030c64530510aac39b7f33a49ca9621dc922d8"
+    }
+  ],
+  "listings": [
+    {
+      "file": "lab4_treponema/scripts/experiment_common.py",
+      "sha256": "38dea99bef34cd53323c933450c0c15ded04f2db6b8072ee4367d96855991fe7",
+      "lines": 73
+    },
+    {
+      "file": "lab4_treponema/scripts/prepare_primary.py",
+      "sha256": "7aa1005f354ba38a88fcf83976f7217c706e345fa569817e8d1d5e90dad8eb63",
+      "lines": 25
+    },
+    {
+      "file": "lab4_treponema/scripts/prepare_models.py",
+      "sha256": "eaed790f50683a822c6f60a6124813a26949199f1f1f277c8a350d9bb7878779",
+      "lines": 29
+    },
+    {
+      "file": "lab4_treponema/scripts/run_video_checks.py",
+      "sha256": "d1c8c5aa9b73f8b578bb8e114151a4c6ddd31d4b242282368f8ca46d8d56c136",
+      "lines": 44
+    },
+    {
+      "file": "lab4_treponema/scripts/run_controls.py",
+      "sha256": "34ddc2a04c22c856c138fdce8e0d0e7fb7bd7b28999389b3c513308780aefd56",
+      "lines": 105
+    },
+    {
+      "file": "lab4_treponema/scripts/run_geometry.py",
+      "sha256": "b21d3f1d77c22c481ea49b152b833e9ccd663dfe4cf9daf0519cae80b6db42cb",
+      "lines": 86
+    },
+    {
+      "file": "lab4/scripts/vision_baselines.py",
+      "sha256": "26889b74a06dea6200f0f7c645aae380f8b419d2ee556638d8248cf2321069f7",
+      "lines": 85
+    },
+    {
+      "file": "lab4_treponema/scripts/run_controls.py",
+      "sha256": "34ddc2a04c22c856c138fdce8e0d0e7fb7bd7b28999389b3c513308780aefd56",
+      "lines": 105
+    },
+    {
+      "file": "lab4/models/RRDBNet_arch.py",
+      "sha256": "0ef92981019fe1527e2570faebaee29c28bdee14094603bd963cd6651a456153",
+      "lines": 78
+    },
+    {
+      "file": "lab4_treponema/scripts/run_learning.py",
+      "sha256": "853abf41ab3cf6ef42f1e2ba6e046d994254f6f32e625baa349405bf388d2eaa",
+      "lines": 171
+    },
+    {
+      "file": "lab4_treponema/scripts/run_learning.py",
+      "sha256": "853abf41ab3cf6ef42f1e2ba6e046d994254f6f32e625baa349405bf388d2eaa",
+      "lines": 171
+    },
+    {
+      "file": "lab4_treponema/scripts/run_zero_shot.py",
+      "sha256": "c221466f03374bb3d10122fdfc7e7ecc3314e65c3fe56a1f33dfd57120fe3624",
+      "lines": 76
+    },
+    {
+      "file": "lab4_treponema/scripts/rutube_download.py",
+      "sha256": "8332ada63f521b25b688c75618ad8320ef20085e99f3ede4fbe1124b49c09f2d",
+      "lines": 27
+    },
+    {
+      "file": "lab4_treponema/scripts/video_index.py",
+      "sha256": "5c6b9c842003aa95fbab139d276afb34d11257be14140b479755dbf88dab05a4",
+      "lines": 85
+    },
+    {
+      "file": "lab4_treponema/scripts/app.py",
+      "sha256": "1cdd06f7a32fac0f02a2244ea3f1508d865f89ac036b9bdec37e7eb385693b14",
+      "lines": 37
+    },
+    {
+      "file": "lab4_treponema/scripts/run_annotations.py",
+      "sha256": "d751a76c2b57c6e807497e8b76a71bd0c33a70b1bb0a9a75fde553be33877b8b",
+      "lines": 56
+    },
+    {
+      "file": "lab4_treponema/scripts/run_learning.py",
+      "sha256": "853abf41ab3cf6ef42f1e2ba6e046d994254f6f32e625baa349405bf388d2eaa",
+      "lines": 171
+    },
+    {
+      "file": "lab4_treponema/scripts/run_pose_training.py",
+      "sha256": "43984522fec1c52ec4349be6a3377cbe90978c9ba3b0973065aa0dfc93e907c9",
+      "lines": 80
+    }
+  ],
+  "blocks": 281
+}

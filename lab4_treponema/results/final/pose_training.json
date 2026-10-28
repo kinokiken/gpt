@@ -1,0 +1,28 @@
+{
+  "split_unit": "visible component in one illustration",
+  "train_objects": 4,
+  "val_objects": 1,
+  "test_objects": 1,
+  "models": [
+    {
+      "model": "v8s",
+      "epochs": 20,
+      "pose_map50": 0.7576582278481011,
+      "pose_map": 0.07751237054085154,
+      "box_map": 0.63,
+      "mean_keypoint_error_px": 49.82670196462271,
+      "PCK_at_01": 0.0,
+      "missed": 0
+    },
+    {
+      "model": "11s",
+      "epochs": 20,
+      "pose_map50": 0.24875,
+      "pose_map": 0.04975,
+      "box_map": 0.8848750000000001,
+      "mean_keypoint_error_px": 59.71653725508912,
+      "PCK_at_01": 0.0,
+      "missed": 0
+    }
+  ]
+}

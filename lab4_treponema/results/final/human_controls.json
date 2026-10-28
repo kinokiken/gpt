@@ -1,0 +1,26 @@
+{
+  "people_0.5": {
+    "boxes": 4,
+    "k": 17
+  },
+  "treponema_0.5": {
+    "boxes": 0,
+    "k": 17
+  },
+  "treponema_0.25": {
+    "boxes": 0,
+    "k": 17
+  },
+  "treponema_0.05": {
+    "boxes": 5,
+    "k": 17
+  },
+  "mediapipe_people": {
+    "people": 1,
+    "k": 33
+  },
+  "mediapipe_treponema": {
+    "people": 0,
+    "k": 33
+  }
+}

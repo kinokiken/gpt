@@ -1,0 +1,66 @@
+{
+  "samples": 80,
+  "train": 40,
+  "val": 15,
+  "test": 25,
+  "classes": [
+    "Treponema",
+    "rods",
+    "cocci"
+  ],
+  "text_queries": [
+    {
+      "query": "Treponema pallidum spiral spirochetes",
+      "hits": [
+        {
+          "file": "t02_0.jpg",
+          "cosine": 0.3050602078437805
+        },
+        {
+          "file": "t04_1.jpg",
+          "cosine": 0.3012849688529968
+        },
+        {
+          "file": "t04_3.jpg",
+          "cosine": 0.3012387156486511
+        }
+      ]
+    },
+    {
+      "query": "rod shaped bacteria",
+      "hits": [
+        {
+          "file": "s04_1.jpg",
+          "cosine": 0.3250724971294403
+        },
+        {
+          "file": "s01_4.jpg",
+          "cosine": 0.31131309270858765
+        },
+        {
+          "file": "s04_0.jpg",
+          "cosine": 0.3112027049064636
+        }
+      ]
+    },
+    {
+      "query": "round cocci bacteria",
+      "hits": [
+        {
+          "file": "t01_4.jpg",
+          "cosine": 0.29385000467300415
+        },
+        {
+          "file": "s02_0.jpg",
+          "cosine": 0.29314154386520386
+        },
+        {
+          "file": "t01_0.jpg",
+          "cosine": 0.28758513927459717
+        }
+      ]
+    }
+  ],
+  "CLIP_precision_at_3_cross_source": 0.30666666666666664,
+  "ResNet_precision_at_3_cross_source": 0.21333333333333332
+}

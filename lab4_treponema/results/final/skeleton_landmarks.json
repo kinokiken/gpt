@@ -1,0 +1,128 @@
+[
+  {
+    "id": 1,
+    "area_px": 12587,
+    "keypoints": [
+      [
+        6.0,
+        98.0
+      ],
+      [
+        64.0,
+        80.0
+      ],
+      [
+        14.0,
+        0.0
+      ]
+    ],
+    "arc_length_px": 249.62236636408625,
+    "contour_points": 566,
+    "simplified_points": 31
+  },
+  {
+    "id": 2,
+    "area_px": 14012,
+    "keypoints": [
+      [
+        154.0,
+        117.0
+      ],
+      [
+        250.0,
+        89.0
+      ],
+      [
+        174.0,
+        4.0
+      ]
+    ],
+    "arc_length_px": 329.2914139223983,
+    "contour_points": 723,
+    "simplified_points": 43
+  },
+  {
+    "id": 3,
+    "area_px": 18867,
+    "keypoints": [
+      [
+        551.0,
+        146.0
+      ],
+      [
+        685.0,
+        173.0
+      ],
+      [
+        758.0,
+        321.0
+      ]
+    ],
+    "arc_length_px": 510.61731573020296,
+    "contour_points": 1186,
+    "simplified_points": 81
+  },
+  {
+    "id": 4,
+    "area_px": 17005,
+    "keypoints": [
+      [
+        251.0,
+        213.0
+      ],
+      [
+        326.0,
+        281.0
+      ],
+      [
+        447.0,
+        238.0
+      ]
+    ],
+    "arc_length_px": 375.87720036002526,
+    "contour_points": 790,
+    "simplified_points": 47
+  },
+  {
+    "id": 5,
+    "area_px": 6681,
+    "keypoints": [
+      [
+        837.0,
+        288.0
+      ],
+      [
+        845.0,
+        362.0
+      ],
+      [
+        869.0,
+        425.0
+      ]
+    ],
+    "arc_length_px": 173.2670273047588,
+    "contour_points": 394,
+    "simplified_points": 19
+  },
+  {
+    "id": 6,
+    "area_px": 36779,
+    "keypoints": [
+      [
+        112.0,
+        456.0
+      ],
+      [
+        407.0,
+        446.0
+      ],
+      [
+        663.0,
+        447.0
+      ]
+    ],
+    "arc_length_px": 822.0214280248092,
+    "contour_points": 2003,
+    "simplified_points": 149
+  }
+]

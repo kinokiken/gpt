@@ -1,0 +1,18 @@
+[
+  {
+    "variant": "original",
+    "reference": "Treponema pallidum 30 um",
+    "Tesseract": "Treponema pallidum 30 um",
+    "EasyOCR": "Treponema pallidum 30 um",
+    "CER_tesseract": 0.0,
+    "CER_easyocr": 0.0
+  },
+  {
+    "variant": "bicubic",
+    "reference": "Treponema pallidum 30 um",
+    "Tesseract": "Treponema pallidum 30 um",
+    "EasyOCR": "Treponem & pallidui 30 Uin",
+    "CER_tesseract": 0.0,
+    "CER_easyocr": 0.25
+  }
+]

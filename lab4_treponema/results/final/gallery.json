@@ -1,0 +1,482 @@
+[
+  {
+    "file": "t01_0.jpg",
+    "source": "t01.jpg",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "t01_1.jpg",
+    "source": "t01.jpg",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "t01_2.jpg",
+    "source": "t01.jpg",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "t01_3.jpg",
+    "source": "t01.jpg",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "t01_4.jpg",
+    "source": "t01.jpg",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "t02_0.jpg",
+    "source": "t02.jpg",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "t02_1.jpg",
+    "source": "t02.jpg",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "t02_2.jpg",
+    "source": "t02.jpg",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "t02_3.jpg",
+    "source": "t02.jpg",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "t02_4.jpg",
+    "source": "t02.jpg",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "t04_0.jpg",
+    "source": "t04.jpg",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "t04_1.jpg",
+    "source": "t04.jpg",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "t04_2.jpg",
+    "source": "t04.jpg",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "t04_3.jpg",
+    "source": "t04.jpg",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "t04_4.jpg",
+    "source": "t04.jpg",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "t05_0.jpg",
+    "source": "t05.jpg",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "t05_1.jpg",
+    "source": "t05.jpg",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "t05_2.jpg",
+    "source": "t05.jpg",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "t05_3.jpg",
+    "source": "t05.jpg",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "t05_4.jpg",
+    "source": "t05.jpg",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "t03_0.jpg",
+    "source": "t03.png",
+    "label": 0,
+    "split": "val"
+  },
+  {
+    "file": "t03_1.jpg",
+    "source": "t03.png",
+    "label": 0,
+    "split": "val"
+  },
+  {
+    "file": "t03_2.jpg",
+    "source": "t03.png",
+    "label": 0,
+    "split": "val"
+  },
+  {
+    "file": "t03_3.jpg",
+    "source": "t03.png",
+    "label": 0,
+    "split": "val"
+  },
+  {
+    "file": "t03_4.jpg",
+    "source": "t03.png",
+    "label": 0,
+    "split": "val"
+  },
+  {
+    "file": "t06_0.jpg",
+    "source": "t06.jpg",
+    "label": 0,
+    "split": "test"
+  },
+  {
+    "file": "t06_1.jpg",
+    "source": "t06.jpg",
+    "label": 0,
+    "split": "test"
+  },
+  {
+    "file": "t06_2.jpg",
+    "source": "t06.jpg",
+    "label": 0,
+    "split": "test"
+  },
+  {
+    "file": "t06_3.jpg",
+    "source": "t06.jpg",
+    "label": 0,
+    "split": "test"
+  },
+  {
+    "file": "t06_4.jpg",
+    "source": "t06.jpg",
+    "label": 0,
+    "split": "test"
+  },
+  {
+    "file": "treponema_primary_0.jpg",
+    "source": "treponema_primary.jpg",
+    "label": 0,
+    "split": "test"
+  },
+  {
+    "file": "treponema_primary_1.jpg",
+    "source": "treponema_primary.jpg",
+    "label": 0,
+    "split": "test"
+  },
+  {
+    "file": "treponema_primary_2.jpg",
+    "source": "treponema_primary.jpg",
+    "label": 0,
+    "split": "test"
+  },
+  {
+    "file": "treponema_primary_3.jpg",
+    "source": "treponema_primary.jpg",
+    "label": 0,
+    "split": "test"
+  },
+  {
+    "file": "treponema_primary_4.jpg",
+    "source": "treponema_primary.jpg",
+    "label": 0,
+    "split": "test"
+  },
+  {
+    "file": "s01_0.jpg",
+    "source": "s01.jpg",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "s01_1.jpg",
+    "source": "s01.jpg",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "s01_2.jpg",
+    "source": "s01.jpg",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "s01_3.jpg",
+    "source": "s01.jpg",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "s01_4.jpg",
+    "source": "s01.jpg",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "s05_0.jpg",
+    "source": "s05.jpg",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "s05_1.jpg",
+    "source": "s05.jpg",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "s05_2.jpg",
+    "source": "s05.jpg",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "s05_3.jpg",
+    "source": "s05.jpg",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "s05_4.jpg",
+    "source": "s05.jpg",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "s06_0.jpg",
+    "source": "s06.jpg",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "s06_1.jpg",
+    "source": "s06.jpg",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "s06_2.jpg",
+    "source": "s06.jpg",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "s06_3.jpg",
+    "source": "s06.jpg",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "s06_4.jpg",
+    "source": "s06.jpg",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "s03_0.jpg",
+    "source": "s03.jpg",
+    "label": 1,
+    "split": "val"
+  },
+  {
+    "file": "s03_1.jpg",
+    "source": "s03.jpg",
+    "label": 1,
+    "split": "val"
+  },
+  {
+    "file": "s03_2.jpg",
+    "source": "s03.jpg",
+    "label": 1,
+    "split": "val"
+  },
+  {
+    "file": "s03_3.jpg",
+    "source": "s03.jpg",
+    "label": 1,
+    "split": "val"
+  },
+  {
+    "file": "s03_4.jpg",
+    "source": "s03.jpg",
+    "label": 1,
+    "split": "val"
+  },
+  {
+    "file": "s04_0.jpg",
+    "source": "s04.jpg",
+    "label": 1,
+    "split": "test"
+  },
+  {
+    "file": "s04_1.jpg",
+    "source": "s04.jpg",
+    "label": 1,
+    "split": "test"
+  },
+  {
+    "file": "s04_2.jpg",
+    "source": "s04.jpg",
+    "label": 1,
+    "split": "test"
+  },
+  {
+    "file": "s04_3.jpg",
+    "source": "s04.jpg",
+    "label": 1,
+    "split": "test"
+  },
+  {
+    "file": "s04_4.jpg",
+    "source": "s04.jpg",
+    "label": 1,
+    "split": "test"
+  },
+  {
+    "file": "s09_0.jpg",
+    "source": "s09.jpg",
+    "label": 1,
+    "split": "test"
+  },
+  {
+    "file": "s09_1.jpg",
+    "source": "s09.jpg",
+    "label": 1,
+    "split": "test"
+  },
+  {
+    "file": "s09_2.jpg",
+    "source": "s09.jpg",
+    "label": 1,
+    "split": "test"
+  },
+  {
+    "file": "s09_3.jpg",
+    "source": "s09.jpg",
+    "label": 1,
+    "split": "test"
+  },
+  {
+    "file": "s09_4.jpg",
+    "source": "s09.jpg",
+    "label": 1,
+    "split": "test"
+  },
+  {
+    "file": "s07_0.jpg",
+    "source": "s07.jpg",
+    "label": 2,
+    "split": "train"
+  },
+  {
+    "file": "s07_1.jpg",
+    "source": "s07.jpg",
+    "label": 2,
+    "split": "train"
+  },
+  {
+    "file": "s07_2.jpg",
+    "source": "s07.jpg",
+    "label": 2,
+    "split": "train"
+  },
+  {
+    "file": "s07_3.jpg",
+    "source": "s07.jpg",
+    "label": 2,
+    "split": "train"
+  },
+  {
+    "file": "s07_4.jpg",
+    "source": "s07.jpg",
+    "label": 2,
+    "split": "train"
+  },
+  {
+    "file": "s08_0.jpg",
+    "source": "s08.jpg",
+    "label": 2,
+    "split": "val"
+  },
+  {
+    "file": "s08_1.jpg",
+    "source": "s08.jpg",
+    "label": 2,
+    "split": "val"
+  },
+  {
+    "file": "s08_2.jpg",
+    "source": "s08.jpg",
+    "label": 2,
+    "split": "val"
+  },
+  {
+    "file": "s08_3.jpg",
+    "source": "s08.jpg",
+    "label": 2,
+    "split": "val"
+  },
+  {
+    "file": "s08_4.jpg",
+    "source": "s08.jpg",
+    "label": 2,
+    "split": "val"
+  },
+  {
+    "file": "s02_0.jpg",
+    "source": "s02.jpg",
+    "label": 2,
+    "split": "test"
+  },
+  {
+    "file": "s02_1.jpg",
+    "source": "s02.jpg",
+    "label": 2,
+    "split": "test"
+  },
+  {
+    "file": "s02_2.jpg",
+    "source": "s02.jpg",
+    "label": 2,
+    "split": "test"
+  },
+  {
+    "file": "s02_3.jpg",
+    "source": "s02.jpg",
+    "label": 2,
+    "split": "test"
+  },
+  {
+    "file": "s02_4.jpg",
+    "source": "s02.jpg",
+    "label": 2,
+    "split": "test"
+  }
+]

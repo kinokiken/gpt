@@ -94,6 +94,7 @@ for v in blocks:
  elif kind=='table':
   table_no+=1;label=f'Таблица {table_no}';pa=doc.add_paragraph(label);pa.paragraph_format.first_line_indent=Cm(0);pa.paragraph_format.keep_with_next=True;story.append(Paragraph(label,styles['small']))
   t=doc.add_table(rows=1,cols=len(v['headers']));t.style='Table Grid';t.autofit=False;ratios=v['widths'] or [1/len(v['headers'])]*len(v['headers'])
+  for column,ratio in zip(t.columns,ratios):column.width=Cm(16.5*ratio)
   for i,(cell,text) in enumerate(zip(t.rows[0].cells,v['headers'])):cell.text=text
   for row in v['rows']:
    for cell,text in zip(t.add_row().cells,row):cell.text=text
