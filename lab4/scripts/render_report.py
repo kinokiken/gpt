@@ -85,7 +85,7 @@ for v in blocks:
  elif kind=='p':
   pa=doc.add_paragraph(v['text']);pa.alignment=WD_ALIGN_PARAGRAPH.JUSTIFY;story.append(Paragraph(esc(v['text']),styles['body']))
  elif kind=='code':
-  pa=doc.add_paragraph();pa.paragraph_format.first_line_indent=Cm(0);pa.paragraph_format.line_spacing=1;pa.paragraph_format.space_after=Pt(8);run=pa.add_run(v['text']);run.font.name='Consolas';run.font.size=Pt(9)
+  pa=doc.add_paragraph();pa.paragraph_format.first_line_indent=Cm(0);pa.paragraph_format.line_spacing=1;pa.paragraph_format.space_after=Pt(8);run=pa.add_run(v['text']);run.font.name='DejaVu Sans Mono';run.font.size=Pt(8)
   # Preserve source line breaks and wrap long commands at spaces in the PDF.
   import textwrap
   lines=[]

@@ -1,0 +1,19 @@
+{
+  "status": "simulated_not_measured",
+  "source_url": null,
+  "query": "spiral bacteria under a microscope",
+  "hits": [
+    {
+      "seconds": 18,
+      "cosine": 0.31
+    },
+    {
+      "seconds": 36,
+      "cosine": 0.29
+    },
+    {
+      "seconds": 62,
+      "cosine": 0.27
+    }
+  ]
+}

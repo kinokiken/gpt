@@ -544,6 +544,8 @@ p("8. CVAT documentation. URL: https://docs.cvat.ai/docs/")
 p("9. Zaharia M. et al. Accelerating the Machine Learning Lifecycle with MLflow. IEEE Data Engineering Bulletin, 2018.")
 p("10. Streamlit documentation. URL: https://docs.streamlit.io/")
 
+from report_layout import arrange
+blocks = arrange(blocks, ROOT)
 (ROOT / "report_blocks.json").write_text(
     json.dumps(blocks, ensure_ascii=False, indent=2), encoding="utf-8")
 print("Prepared", len(blocks), "report blocks")
