@@ -724,6 +724,885 @@
   },
   {
     "kind": "h",
+    "text": "Приложение А. Полные листинги программ",
+    "level": 1
+  },
+  {
+    "kind": "p",
+    "text": "В листингах приведены исходные файлы целиком, в том виде, в каком они находятся в проекте. Путь указан перед каждой программой. В сокращённом виде в основном тексте приведены только поясняющие схемы; для воспроизведения следует пользоваться полными листингами данного приложения."
+  },
+  {
+    "kind": "h",
+    "text": "А.1. Загрузка исходных изображений и видео из Wikimedia Commons",
+    "level": 2
+  },
+  {
+    "kind": "p",
+    "text": "Файл проекта: scripts/fetch_open_data.py."
+  },
+  {
+    "kind": "p",
+    "text": "Листинг А.1 — Загрузка исходных изображений и видео из Wikimedia Commons"
+  },
+  {
+    "kind": "code",
+    "text": "\"\"\"Download open Treponema material from Wikimedia Commons. No RuTube access.\"\"\"\nfrom pathlib import Path\nimport json\nimport requests\n\nROOT = Path(__file__).resolve().parents[1]\nRAW = ROOT / 'data/raw'\nRAW.mkdir(parents=True, exist_ok=True)\nsession = requests.Session()\nsession.headers['User-Agent'] = 'Lab4ComputerVision/2.0 (educational; https://github.com/kinokiken/gpt)'\ntitles = [\n    'TreponemaPallidum.jpg',\n    'Treponema pallidum.jpg',\n    'Treponema pallidum 01.png',\n    'Treponemapallidum.jpg',\n    'Treponema pallidum Bacteria (Syphilis) - NIAID.jpg',\n    'Syphilis Bacteria (16842837731).jpg',\n    'Ultramicroscope time-lapse of syphilis parasite-Comandon-1910.ogv',\n]\nrows = []\nfor number, title in enumerate(titles, 1):\n    response = session.get('https://commons.wikimedia.org/w/api.php', params={\n        'action': 'query', 'format': 'json', 'titles': 'File:' + title,\n        'prop': 'imageinfo', 'iiprop': 'url|extmetadata|size'}, timeout=60)\n    response.raise_for_status()\n    info = next(iter(response.json()['query']['pages'].values()))['imageinfo'][0]\n    suffix = Path(title).suffix.lower()\n    destination = RAW / f't{number:02d}{suffix}'\n    if not destination.exists():\n        data = session.get(info['url'], timeout=180)\n        data.raise_for_status()\n        destination.write_bytes(data.content)\n    rows.append({'id': f't{number:02d}', 'title': title, 'file': destination.name,\n                 'width': info.get('width'), 'height': info.get('height'),\n                 'source_page': 'https://commons.wikimedia.org/wiki/File:' + title.replace(' ', '_'),\n                 'artist': info.get('extmetadata', {}).get('Artist', {}).get('value', ''),\n                 'license': info.get('extmetadata', {}).get('LicenseShortName', {}).get('value', '')})\n(RAW / 'sources.json').write_text(json.dumps(rows, ensure_ascii=False, indent=2), encoding='utf-8')\nprint('Downloaded/checked', len(rows), 'open files')"
+  },
+  {
+    "kind": "h",
+    "text": "А.2. Подготовка цветовой маски, скелета, ключевых точек и графиков",
+    "level": 2
+  },
+  {
+    "kind": "p",
+    "text": "Файл проекта: scripts/prepare_and_visualize.py."
+  },
+  {
+    "kind": "p",
+    "text": "Листинг А.2 — Подготовка цветовой маски, скелета, ключевых точек и графиков"
+  },
+  {
+    "kind": "code",
+    "text": "\"\"\"Prepare the primary Treponema image and reproduce compact result figures.\"\"\"\nfrom pathlib import Path\nimport json\nimport cv2\nimport numpy as np\nfrom PIL import Image, ImageDraw, ImageFont\nfrom scipy.sparse import coo_matrix\nfrom scipy.sparse.csgraph import dijkstra\nfrom skimage.morphology import skeletonize, remove_small_holes, remove_small_objects\nimport matplotlib\nmatplotlib.use('Agg')\nimport matplotlib.pyplot as plt\n\nROOT = Path(__file__).resolve().parents[1]\nRAW, OUT = ROOT / 'data/raw', ROOT / 'results'\nOUT.mkdir(exist_ok=True)\nim = cv2.imread(str(RAW / 'treponema_primary.jpg'))\nhsv = cv2.cvtColor(im, cv2.COLOR_BGR2HSV)\nmask = (im[:, :, 1] < 55) & (hsv[:, :, 1] > 100)\nmask = remove_small_holes(remove_small_objects(mask, max_size=119), max_size=149)\nmask = cv2.morphologyEx(mask.astype('uint8'), cv2.MORPH_CLOSE, np.ones((3, 3), np.uint8))\nskel = skeletonize(mask > 0)\nn, labels, stats, _ = cv2.connectedComponentsWithStats(mask)\noverlay = im.copy(); geometry = []\nfor label in range(1, n):\n    if stats[label, 4] <= 450: continue\n    yy, xx = np.nonzero(labels == label)\n    points = np.column_stack([xx, yy]).astype(float)\n    center = points.mean(0)\n    _, _, vh = np.linalg.svd(points - center, full_matrices=False)\n    projection = (points - center) @ vh[0]\n    ends = center + np.array([projection.min(), projection.max()])[:, None] * vh[0]\n    three = np.vstack([ends[0], center, ends[1]])\n    for index, point in enumerate(three):\n        cv2.circle(overlay, tuple(point.astype(int)), 6, (0, 255, 255), -1)\n        cv2.putText(overlay, str(index), tuple(point.astype(int) + [5, -5]), 0, .55, (255,255,255), 2)\n    cv2.line(overlay, tuple(ends[0].astype(int)), tuple(ends[1].astype(int)), (0,255,0), 2)\n    geometry.append({'region': len(geometry), 'area_px': int(stats[label,4]),\n                     'centroid': center.tolist(), 'three_points': three.tolist()})\ncv2.imwrite(str(OUT/'primary_mask.png'), mask*255)\ncv2.imwrite(str(OUT/'primary_skeleton.png'), skel.astype('uint8')*255)\ncv2.imwrite(str(OUT/'primary_keypoints.jpg'), overlay)\n\nfig, ax = plt.subplots(2, 2, figsize=(11, 7))\nax[0,0].imshow(cv2.cvtColor(im,cv2.COLOR_BGR2RGB)); ax[0,0].set_title('Исходное изображение')\nax[0,1].imshow(mask,cmap='gray'); ax[0,1].set_title('Цветовая маска')\nax[1,0].imshow(skel,cmap='gray'); ax[1,0].set_title('Скелет осевой линии')\nax[1,1].imshow(cv2.cvtColor(overlay,cv2.COLOR_BGR2RGB)); ax[1,1].set_title('Три точки видимого фрагмента')\nfor a in ax.flat:a.axis('off')\nfig.tight_layout();fig.savefig(OUT/'primary_analysis.png',dpi=180);plt.close(fig)\n\ntrackers={'MIL':(.532,39.1),'MOSSE':(.550,3247.3),'KCF':(.497,648.9),'CSRT':(.488,62.7)}\nfig,ax=plt.subplots(1,2,figsize=(10,4));names=list(trackers)\nax[0].bar(names,[trackers[x][0] for x in names],color='#6f42c1');ax[0].set(ylabel='Средний IoU',ylim=(0,0.65))\nax[1].bar(names,[trackers[x][1] for x in names],color='#d63384');ax[1].set(ylabel='FPS',yscale='log')\nfig.tight_layout();fig.savefig(OUT/'tracking_metrics.png',dpi=180);plt.close(fig)\n\nfig,ax=plt.subplots(1,2,figsize=(10,4))\nax[0].bar(['Bicubic','Real-ESRGAN'],[25.685,24.410],color=['#198754','#dc3545']);ax[0].set(ylabel='PSNR, dB',ylim=(20,27))\nax[1].bar(['Bicubic','Real-ESRGAN'],[.699,.582],color=['#198754','#dc3545']);ax[1].set(ylabel='SSIM',ylim=(0,0.8))\nfig.tight_layout();fig.savefig(OUT/'superresolution_metrics.png',dpi=180);plt.close(fig)\n\nmodels=['YOLO-World','FastSAM text','CLIP Treponema','CLIPSeg name','DINO+SAM']\nvalues=[0,1,.162,0,6]\nfig,ax=plt.subplots(figsize=(9,4));ax.bar(models,values,color='#7b2cbf');ax.set_ylabel('Число объектов / относительная оценка');ax.tick_params(axis='x',rotation=15)\nfig.tight_layout();fig.savefig(OUT/'zero_shot_summary.png',dpi=180);plt.close(fig)\n\nfig,ax=plt.subplots(figsize=(8,4));\nax.bar(['Decision tree','MLP'],[.476,.718],color=['#457b9d','#e76f51']);ax.set(ylabel='Macro-F1 на тесте',ylim=(0,1));\nfig.tight_layout();fig.savefig(OUT/'mlflow_models.png',dpi=180);plt.close(fig)\n\npose={'YOLOv8s':(.392,52.05,.067),'YOLO11s':(.635,42.27,.600)}; pose_names=list(pose)\nfig,ax=plt.subplots(1,3,figsize=(11,4));\nax[0].bar(pose_names,[pose[x][0] for x in pose_names]);ax[0].set_title('Pose mAP50–95')\nax[1].bar(pose_names,[pose[x][1] for x in pose_names]);ax[1].set_title('Ошибка точки, px')\nax[2].bar(pose_names,[pose[x][2] for x in pose_names]);ax[2].set_title('PCK@0.1')\nfig.tight_layout();fig.savefig(OUT/'pose_comparison.png',dpi=180);plt.close(fig)\n\nfig,ax=plt.subplots(1,2,figsize=(9,4));ax[0].bar(['CLIP','ResNet18'],[1,1],color=['#5a189a','#2a9d8f']);ax[0].set(ylabel='Precision@3',ylim=(0,1.1));ax[1].bar(['До обучения','После обучения'],[.99,1.0],color=['#457b9d','#e76f51']);ax[1].set(ylabel='Balanced accuracy',ylim=(0.9,1.01));fig.tight_layout();fig.savefig(OUT/'retrieval_metric.png',dpi=180);plt.close(fig)\n\nvideo=RAW/'t07.ogv';cap=cv2.VideoCapture(str(video));fps=cap.get(cv2.CAP_PROP_FPS);fig,axes=plt.subplots(2,4,figsize=(11,5))\nfor axis,sec in zip(axes.flat,[0,12,24,36,48,60,68,74]):\n    cap.set(cv2.CAP_PROP_POS_MSEC,sec*1000);ok,frame=cap.read()\n    if ok:axis.imshow(cv2.cvtColor(frame,cv2.COLOR_BGR2RGB));axis.set_title(f'{sec} с')\n    axis.axis('off')\ncap.release();fig.tight_layout();fig.savefig(OUT/'video_contact.png',dpi=170);plt.close(fig)\n\nsummary={'primary_shape':list(im.shape[:2]),'mask_fraction':float(mask.mean()),'connected_regions':len(geometry),\n         'geometry':geometry,'trackers':trackers,'superresolution':{'Bicubic':{'PSNR':25.685,'SSIM':.699},'Real-ESRGAN':{'PSNR':24.410,'SSIM':.582}}}\n(OUT/'preparation.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2),encoding='utf-8')\n# Contact sheet of the primary illustration and additional open Treponema material.\nsource_files=[RAW/'treponema_primary.jpg']+[RAW/f't{i:02d}{ext}' for i,ext in [(1,'.jpg'),(2,'.jpg'),(3,'.png'),(4,'.jpg'),(5,'.jpg'),(6,'.jpg')]]\nfig,axes=plt.subplots(2,4,figsize=(12,6));\nfor index,axis in enumerate(axes.flat):\n    if index<len(source_files):\n        axis.imshow(Image.open(source_files[index]).convert('RGB'));axis.set_title('Основное изображение' if index==0 else f'Открытый источник t{index:02d}')\n    axis.axis('off')\nfig.tight_layout();fig.savefig(OUT/'sources_contact.png',dpi=160);plt.close(fig)\nprint(json.dumps({k:v for k,v in summary.items() if k!='geometry'},ensure_ascii=False))"
+  },
+  {
+    "kind": "h",
+    "text": "А.3. Индексирование кадров и построение CLIP-векторов",
+    "level": 2
+  },
+  {
+    "kind": "p",
+    "text": "Файл проекта: scripts/video_index.py."
+  },
+  {
+    "kind": "p",
+    "text": "Листинг А.3 — Индексирование кадров и построение CLIP-векторов"
+  },
+  {
+    "kind": "code",
+    "text": "\"\"\"Build and search a local CLIP video index; the module makes no hosting requests.\"\"\"\nfrom pathlib import Path\nimport argparse, json, cv2, numpy as np, torch\nfrom PIL import Image\nfrom transformers import CLIPModel, CLIPProcessor\nimport torch.nn.functional as F\n\ndef model():\n    return (CLIPModel.from_pretrained('openai/clip-vit-base-patch32',use_safetensors=True).eval(),\n            CLIPProcessor.from_pretrained('openai/clip-vit-base-patch32'))\ndef index_video(video, out, step=2.0, source_url=''):\n    out=Path(out); frames=out/'frames'; frames.mkdir(parents=True,exist_ok=True)\n    cap=cv2.VideoCapture(str(video)); fps=cap.get(cv2.CAP_PROP_FPS); count=int(cap.get(cv2.CAP_PROP_FRAME_COUNT)); net,proc=model(); rows=[]; vectors=[]\n    for number in range(0,count,max(1,round(fps*step))):\n        cap.set(cv2.CAP_PROP_POS_FRAMES,number);ok,frame=cap.read()\n        if not ok:continue\n        path=frames/f'frame_{number:06d}.jpg';cv2.imwrite(str(path),frame)\n        with torch.no_grad():z=F.normalize(net.get_image_features(**proc(images=Image.fromarray(cv2.cvtColor(frame,cv2.COLOR_BGR2RGB)),return_tensors='pt')),dim=1)[0]\n        vectors.append(z.numpy());rows.append({'frame':number,'seconds':number/fps,'path':str(path.relative_to(out)),'source_url':source_url})\n    cap.release();np.save(out/'vectors.npy',np.asarray(vectors));(out/'index.json').write_text(json.dumps({'fps':fps,'count':count,'step_s':step,'records':rows},ensure_ascii=False,indent=2));return rows\nif __name__=='__main__':\n    p=argparse.ArgumentParser();p.add_argument('video');p.add_argument('--out',default='data/video_index');p.add_argument('--step',type=float,default=2);a=p.parse_args();print('Indexed',len(index_video(a.video,a.out,a.step)))"
+  },
+  {
+    "kind": "h",
+    "text": "А.4. Интерфейс Streamlit для поиска по видео",
+    "level": 2
+  },
+  {
+    "kind": "p",
+    "text": "Файл проекта: scripts/app.py."
+  },
+  {
+    "kind": "p",
+    "text": "Листинг А.4 — Интерфейс Streamlit для поиска по видео"
+  },
+  {
+    "kind": "code",
+    "text": "\"\"\"Streamlit search over a prepared Treponema pallidum video index.\"\"\"\nfrom pathlib import Path\nimport json, numpy as np, streamlit as st, torch\nfrom PIL import Image\nfrom video_index import model\nimport torch.nn.functional as F\n@st.cache_resource\ndef get_model():return model()\nst.set_page_config(page_title='Поиск Treponema pallidum в видео', layout='wide')\nst.title('Поиск кадров Treponema pallidum')\nst.caption('Видео: Jean Comandon, «Ultramicroscope time-lapse of syphilis parasite», public domain.')\ndirectory=Path(st.text_input('Каталог индекса','data/video_index'))\nquery=st.text_input('Запрос','Treponema pallidum spirochetes moving in a microscope field')\nif st.button('Найти'):\n    index_path, vectors_path = directory/'index.json', directory/'vectors.npy'\n    if not index_path.exists() or not vectors_path.exists():\n        st.error('Индекс не найден. Сначала выполните: python scripts/video_index.py data/raw/t07.ogv --out data/video_index --step 2')\n        st.stop()\n    metadata=json.loads(index_path.read_text(encoding='utf-8'));vectors=np.load(vectors_path);net,proc=get_model()\n    with torch.no_grad():q=F.normalize(net.get_text_features(**proc(text=[query],return_tensors='pt',padding=True)),dim=1)[0].numpy()\n    for i in np.argsort(-(vectors@q))[:3]:\n        row=metadata['records'][i]\n        st.image(str(directory/row['path']),width=480)\n        st.write(f\"Время: {row['seconds']:.2f} с; сходство: {(vectors@q)[i]:.3f}\")\n        if row.get('source_url'):\n            st.link_button('Источник видео', row['source_url'])"
+  },
+  {
+    "kind": "h",
+    "text": "А.5. Пользовательская загрузка и индексирование RuTube",
+    "level": 2
+  },
+  {
+    "kind": "p",
+    "text": "Файл проекта: scripts/rutube_download.py."
+  },
+  {
+    "kind": "p",
+    "text": "Листинг А.5 — Пользовательская загрузка и индексирование RuTube"
+  },
+  {
+    "kind": "code",
+    "text": "\"\"\"User-run RuTube downloader. Importing this file performs no request.\"\"\"\nfrom pathlib import Path\nfrom urllib.parse import urlsplit\nimport argparse, json, re\n\ndef validate_url(url):\n    part=urlsplit(url)\n    if part.scheme!='https' or (part.hostname or '').lower() not in {'rutube.ru','www.rutube.ru'}:\n        raise ValueError('Нужна HTTPS-ссылка RuTube')\n    match=re.fullmatch(r'/video/([0-9a-fA-F]{32})/?',part.path)\n    if not match:raise ValueError('Нужна ссылка на отдельный публичный ролик')\n    return f'https://rutube.ru/video/{match.group(1).lower()}/'\ndef download(url,destination):\n    from yt_dlp import YoutubeDL\n    destination=Path(destination);destination.mkdir(parents=True,exist_ok=True)\n    options={'format':'bestvideo[height<=720]+bestaudio/best[height<=720]/best','outtmpl':str(destination/'%(id)s.%(ext)s'),'merge_output_format':'mp4','noplaylist':True,'socket_timeout':30,'retries':2,'overwrites':False}\n    with YoutubeDL(options) as loader:\n        info=loader.extract_info(validate_url(url),download=True);path=Path(loader.prepare_filename(info)).with_suffix('.mp4')\n        if not path.exists():path=Path(loader.prepare_filename(info))\n        (destination/'source.json').write_text(json.dumps({'url':url,'title':info.get('title'),'duration':info.get('duration'),'video_path':str(path)},ensure_ascii=False,indent=2))\n        return path\ndef main():\n    p=argparse.ArgumentParser();p.add_argument('url');p.add_argument('--out',default='data/rutube');p.add_argument('--step',type=float,default=2);p.add_argument('--local-video');a=p.parse_args();url=validate_url(a.url);out=Path(a.out)\n    video=Path(a.local_video) if a.local_video else download(url,out/'download')\n    from video_index import index_video\n    rows=index_video(video,out/'index',a.step,url);print('Индекс:',out/'index','Кадров:',len(rows))\nif __name__=='__main__':main()"
+  },
+  {
+    "kind": "h",
+    "text": "А.6. Проверка исходных данных и ранее полученных результатов",
+    "level": 2
+  },
+  {
+    "kind": "p",
+    "text": "Файл проекта: scripts/verify_checkpoint.py."
+  },
+  {
+    "kind": "p",
+    "text": "Листинг А.6 — Проверка исходных данных и ранее полученных результатов"
+  },
+  {
+    "kind": "code",
+    "text": "\"\"\"Offline validation for the partial checkpoint.\"\"\"\nfrom pathlib import Path\nimport importlib.util\nimport json\nfrom PIL import Image\n\nROOT = Path(__file__).resolve().parents[1]\nspec = importlib.util.spec_from_file_location('rutube_download', ROOT/'scripts/rutube_download.py')\nmodule = importlib.util.module_from_spec(spec)\nspec.loader.exec_module(module)\nvalid = 'https://rutube.ru/video/0123456789abcdef0123456789abcdef/'\nassert module.validate_url(valid) == valid\nfor bad in ['http://rutube.ru/video/0123456789abcdef0123456789abcdef/',\n            'https://example.com/video/0123456789abcdef0123456789abcdef/']:\n    try:\n        module.validate_url(bad)\n        raise AssertionError('Invalid URL accepted')\n    except ValueError:\n        pass\nassert Image.open(ROOT/'data/raw/treponema_primary.jpg').size == (870, 540)\nsources = json.loads((ROOT/'data/raw/sources.json').read_text(encoding='utf-8'))\nassert len(sources) == 7 and (ROOT/'data/raw/t07.ogv').stat().st_size > 1_000_000\nresult = json.loads((ROOT/'results/preparation.json').read_text(encoding='utf-8'))\nassert result['connected_regions'] == 6\nassert abs(result['mask_fraction'] - .2254810557684121) < 1e-9\nfor name in ['primary_analysis.png','sources_contact.png','video_contact.png','tracking_metrics.png',\n             'superresolution_metrics.png','retrieval_metric.png','zero_shot_summary.png',\n             'mlflow_models.png','pose_comparison.png']:\n    with Image.open(ROOT/'results'/name) as image:\n        image.verify()\nprint('PASS: data, figures and offline RuTube URL validation')"
+  },
+  {
+    "kind": "h",
+    "text": "Приложение Б. Дополнительные пояснения к методам",
+    "level": 1
+  },
+  {
+    "kind": "h",
+    "text": "Б.1. Представление спиралевидного объекта",
+    "level": 2
+  },
+  {
+    "kind": "p",
+    "text": "Для длинной тонкой клетки выбор представления определяет, какую информацию сможет обработать алгоритм. Рамка фиксирует только положение и площадь прямоугольника, содержащего объект. Она плохо различает один изогнутый организм и несколько касающихся фрагментов. Бинарная маска описывает занятую клеткой область, однако цветовой порог на иллюстрации не является универсальным для микроскопии. Скелет сводит маску к однопиксельной центральной линии, сохраняя приблизительную форму, но может давать лишние ветви в месте соприкосновения объектов. Набор ключевых точек задаёт локальную геометрию, но теряет форму между ориентирами."
+  },
+  {
+    "kind": "p",
+    "text": "Маска M(x,y) является бинарной функцией изображения. Доля маски вычисляется как сумма M по пикселям, делённая на число пикселей изображения. Это описательный показатель сегментации, а не точность. Для оценки точности требуется эталонная маска G и, например, IoU = |M∩G| / |M∪G|. В имеющемся наборе экспертной маски нет, поэтому IoU сегментации не сообщается."
+  },
+  {
+    "kind": "p",
+    "text": "Связная компонента определяется после задания соседства пикселей. При 8-связности диагонально соприкасающиеся пиксели входят в одну область. Если две спирали соприкасаются на цветной иллюстрации, алгоритм может объединить их. Если яркость одного организма меняется вдоль длины, он, напротив, может распасться на несколько компонент. Порог по площади удаляет мелкие точки и артефакты, но также может удалить короткий или слабоокрашенный фрагмент."
+  },
+  {
+    "kind": "p",
+    "text": "Метод главных компонент задаёт прямую, вдоль которой проекции точек маски имеют наибольшую дисперсию. Для почти прямой палочки это приближённая ось. Для спирали главная ось проходит через всю область и не повторяет изгибы: крайние проекции могут оказаться не на биологических концах. Поэтому в отчёте точки интерпретируются как геометрические ориентиры на видимом фрагменте. Для точек вдоль спирали предпочтительна длина дуги скелетной линии."
+  },
+  {
+    "kind": "h",
+    "text": "Б.2. Масштаб, разрешение и единицы измерения",
+    "level": 2
+  },
+  {
+    "kind": "p",
+    "text": "Пиксельное расстояние становится физическим расстоянием только при известном масштабе и одинаковой плоскости изображения. На пользовательской иллюстрации масштабная линейка отсутствует, поэтому координаты и длины указываются в пикселях. У исторического видео размер кадра 360 × 288 пикселей, однако из его разрешения также нельзя вывести микрометры на пиксель. Масштаб с другого видео или микроскопа переносить нельзя."
+  },
+  {
+    "kind": "p",
+    "text": "Изменение размера изображения выполняется интерполяцией. Nearest-neighbor копирует значение ближайшего пикселя и даёт ступенчатые контуры. Bilinear интерполирует по четырём соседям и сглаживает детали. Bicubic использует более широкую окрестность, обычно сохраняя баланс резкости и сглаживания. Нейросетевой метод выводит изображение по обученным статистическим закономерностям, поэтому способен добавлять текстуру. Для измерения геометрии целесообразно использовать исходное изображение или метод с проверяемым масштабом, а не восстановленные нейросетью детали."
+  },
+  {
+    "kind": "p",
+    "text": "PSNR вычисляется через среднеквадратичную ошибку пикселей относительно эталона. SSIM сравнивает локальные яркость, контраст и структуру. Оба показателя допустимы, когда эталонное изображение существует и алгоритм проверяется на его уменьшенной копии. Они не показывают биологическую достоверность деталей и не оценивают диагностическую пригодность."
+  },
+  {
+    "kind": "h",
+    "text": "Б.3. Оценка движения и ограничения видеотрекинга",
+    "level": 2
+  },
+  {
+    "kind": "p",
+    "text": "Положение трекера на кадре — это гипотеза о местоположении выбранной цели. Алгоритм обновления получает новый кадр и возвращает прямоугольник вместе с признаком успеха. Для ручной проверки на контрольных кадрах вычисляется IoU. Средний IoU по короткому интервалу чувствителен к выбранным кадрам и рамке; его нельзя переносить на всю видеозапись. Нулевой IoU при потере цели показывает неудачу трекера в этом наблюдении, а не отсутствие бактерии в видео."
+  },
+  {
+    "kind": "p",
+    "text": "Плотный оптический поток возвращает вектор (u,v) для каждого пикселя. Его длина равна sqrt(u²+v²), а направление зависит от системы координат изображения, в которой y растёт вниз. Среднее всех векторов большого кадра смешивает движение объекта с дрожанием камеры, движением фона и шумом. Поэтому анализ ограничивается областью интереса и коротким временным интервалом. Для скорости в микрометрах в секунду дополнительно требуются калибровка масштаба и надёжный временной интервал."
+  },
+  {
+    "kind": "p",
+    "text": "Lucas–Kanade отслеживает локальные характерные точки. При обратной проверке точка сначала переносится вперёд, затем назад; большие циклические ошибки отбрасываются. Метод не требует, чтобы все пиксели имели одинаковое движение, но может потерять точки в области слабой текстуры. Farneback, напротив, оценивает плотное поле и обычно даёт значения для фона и клеток одновременно. Эти методы дополняют друг друга, но ни один сам по себе не присваивает клеткам идентификаторы."
+  },
+  {
+    "kind": "h",
+    "text": "Б.4. Протокол воспроизводимости",
+    "level": 2
+  },
+  {
+    "kind": "p",
+    "text": "Для повторения эксперимента фиксируются имя исходного файла, его размер, версия скрипта, параметры запуска, версия библиотек и расположение результата. Исходные изображения не перезаписываются. Результаты пишутся в отдельный каталог. Для каждой модели сохраняется текстовый запрос или набор классов, поскольку изменение формулировки способно изменить выдачу zero-shot-модели. Для обучения также фиксируются seed, разделение данных и выбранный checkpoint."
+  },
+  {
+    "kind": "p",
+    "text": "Краткая последовательность воспроизведения: создать окружение по requirements.txt; проверить источники в data/raw/sources.json; выполнить prepare_and_visualize.py; выполнить verify_checkpoint.py; построить индекс видео после установки CLIP-весов; запустить Streamlit и выполнить запрос; записать полученное время и сходство; при желании выполнить пользовательский RuTube-скрипт с собственным публичным URL. Сетевой запуск RuTube для отчёта не требуется и здесь не выполнялся."
+  },
+  {
+    "kind": "h",
+    "text": "Приложение В. Подробный анализ выполнения частей работы",
+    "level": 1
+  },
+  {
+    "kind": "h",
+    "text": "В.1. Подготовка данных",
+    "level": 2
+  },
+  {
+    "kind": "p",
+    "text": "Входные материалы разных типов требуют раздельной проверки. JPEG и PNG проверяются на возможность декодирования, размеры и цветовой режим. Видео читается через OpenCV и FFmpeg; при ошибке открытия отдельно проверяются контейнер и видеокодек. Файл источников описывает происхождение и условия использования, а каталог результатов хранит обработанные копии. Такой порядок позволяет отличить повреждение входных данных от ошибки алгоритма."
+  },
+  {
+    "kind": "p",
+    "text": "Основная иллюстрация имеет формат RGB, но OpenCV при чтении возвращает BGR. Если передать BGR в библиотеку, ожидающую RGB, цветовые каналы поменяются местами. Для цветовой обработки это напрямую меняет HSV и итоговую маску. Поэтому преобразование цветового пространства выполняется явно. Для вывода через PIL или Matplotlib BGR снова преобразуется в RGB."
+  },
+  {
+    "kind": "p",
+    "text": "При подготовке изображений важно сохранять соотношение сторон. Простое растяжение до квадратной формы меняет геометрию спирали и искажает интервалы между витками. В текущей обработке исходная геометрия 870 × 540 сохраняется; обучение на 256 × 256 фрагментах относится к отдельному упрощённому набору и не должно смешиваться с измерениями исходной иллюстрации."
+  },
+  {
+    "kind": "p",
+    "text": "Распределение объектов по источникам предпочтительнее случайного деления отдельных вырезок. Если несколько фрагментов одного снимка попадут в обучающую и тестовую части, модель может запомнить фон, освещение и артефакты конкретной съёмки. Даже разделение по файлам не гарантирует биологической независимости, когда метаданные не сообщают, сняты ли изображения с одного препарата. Это ограничение нужно сохранять при интерпретации показателей обучения."
+  },
+  {
+    "kind": "h",
+    "text": "В.2. Цветовая сегментация и морфология",
+    "level": 2
+  },
+  {
+    "kind": "p",
+    "text": "HSV отделяет компонент оттенка от насыщенности и яркости. В цветной иллюстрации фиолетовые структуры имеют высокий оттенок в красно-синем диапазоне и заметную насыщенность; розовый фон отличается по насыщенности. Использованные условия S < 55 для зелёного канала исходного BGR и S_HSV > 100 для насыщенности задают эвристический фильтр именно для этого изображения. Они не представляют универсальный порог для трепонемы."
+  },
+  {
+    "kind": "p",
+    "text": "Морфологическое закрытие сначала расширяет области, а затем сужает их. Оно соединяет близкие разрывы и сглаживает небольшие отверстия. Увеличение ядра может объединить две соседние спирали; слишком малое ядро оставит фрагменты разорванными. Удаление малых объектов и заполнение малых отверстий определяются предельной площадью. Порог 119/149 пикселей выбран для текущей иллюстрации и должен изменяться после оценки маски."
+  },
+  {
+    "kind": "p",
+    "text": "Для серой микроскопии цветовой порог неприменим. В таком случае возможны адаптивный порог по локальной яркости, вычитание фона, фильтр сосудистых структур, Frangi-подобные фильтры, порог по контрасту или обученная сегментационная сеть. Эти методы требуют ручной эталонной маски для выбора порога и сравнения. Отдельная визуальная иллюстрация с ярким цветом не обосновывает перенос на слабоконтрастный препарат."
+  },
+  {
+    "kind": "p",
+    "text": "Проверка сегментации включает наложение контура маски на исходник, осмотр увеличенных фрагментов, подсчёт связных компонент и сравнение с вручную размеченной небольшой выборкой. Полезно фиксировать как минимум долю выделенных пикселей, число компонент по заданным порогам площади и список проблемных областей. Эти описательные показатели позволяют повторить изменение порогов, но не заменяют точность относительно эталона."
+  },
+  {
+    "kind": "h",
+    "text": "В.3. Скелетизация и ориентиры",
+    "level": 2
+  },
+  {
+    "kind": "p",
+    "text": "Скелетизация последовательно удаляет граничные пиксели, пока от области не остаётся центральная линия. Для почти однопиксельной линии удобно оценить длину и форму, но полученный скелет часто содержит короткие ответвления, вызванные неровной маской. У спиралевидного объекта эти ветви особенно заметны в местах, где контраст витка меняется или соседние витки соприкасаются."
+  },
+  {
+    "kind": "p",
+    "text": "Перед выбором пяти равноудалённых ориентиров требуется представить скелет как граф: пиксели с одним соседом — концы, с тремя и более соседями — узлы ветвления, остальные — точки пути. При нескольких конечных точках можно выбрать самый длинный путь, но он всё ещё может пройти по двум клеткам, если маска их объединила. Ветви короче заданного порога удаляют только после осмотра и сравнения длины в пикселях."
+  },
+  {
+    "kind": "p",
+    "text": "Точки, равномерно расположенные по длине дуги, сохраняют характер изгиба лучше, чем PCA-экстремумы. Для трёх ориентиров выбираются 0%, 50% и 100% основного пути. Для пяти — 0%, 25%, 50%, 75% и 100%. Когда один конец скрыт или выходит из кадра, его видимость должна маркироваться отдельно; координату нельзя назначать по догадке."
+  },
+  {
+    "kind": "p",
+    "text": "Однозначное направление спирали также требует соглашения. В изображении экранная координата y увеличивается вниз, поэтому понятия «лево» и «верх» зависят от ориентации кадра. Для статической иллюстрации точки можно сортировать по меньшему x, затем меньшему y. Для последовательности кадров направление сохраняется по ближайшему к предыдущей позиции концу либо по соответствию между конфигурациями, чтобы ID концов не менялись при небольшом повороте объекта."
+  },
+  {
+    "kind": "h",
+    "text": "В.4. Трекеры и ручная проверка",
+    "level": 2
+  },
+  {
+    "kind": "p",
+    "text": "MIL строит набор положительных и отрицательных примеров вокруг текущего положения и обновляет классификатор по мере движения. KCF использует корреляционную фильтрацию и быстро обрабатывает кадр, когда объект меняет положение умеренно. CSRT объединяет пространственную маску и весовые коэффициенты каналов признаков. Сравнение полезно только при одинаковом начальном прямоугольнике, одинаковом отрезке и фиксированных настройках."
+  },
+  {
+    "kind": "p",
+    "text": "Ручная разметка контрольных кадров должна производиться до просмотра результатов трекеров или независимым проходом по видео, чтобы не подгонять рамку под предсказание. При очень тонкой клетке граница прямоугольника неоднозначна: включать ли ореол и фон вокруг неё? Для сопоставимости используется одна явная конвенция, например рамка по видимому контрастному телу с небольшим равным отступом."
+  },
+  {
+    "kind": "p",
+    "text": "IoU становится нестабильным для очень узких рамок: смещение на несколько пикселей резко уменьшает пересечение. Поэтому при интерпретации рядом с IoU полезно показывать фактические координаты, отмечать потерю объекта и сохранять контрольные кадры. Скорость FPS зависит от разрешения, CPU, кеширования и выбранного способа чтения кадров; это характеристика тестового запуска, а не гарантированная производительность на другом компьютере."
+  },
+  {
+    "kind": "p",
+    "text": "Если в кадре несколько похожих спиралей, одиночный трекер может перейти на соседний объект. Это не ошибка вычисления рамки сама по себе, а потеря идентичности, для которой нужны дополнительные признаки или многократное сопоставление объектов. Короткий трек на одном визуально выбранном объекте не оценивает реальную задачу подсчёта бактерий в плотном поле."
+  },
+  {
+    "kind": "h",
+    "text": "В.5. Оптический поток и временная согласованность",
+    "level": 2
+  },
+  {
+    "kind": "p",
+    "text": "Предположение постоянства яркости связывает интенсивность точки в текущем кадре с её смещённым положением в следующем. Оно нарушается при изменении фокуса, освещения и прозрачности среды. Для слабоконтрастных спиралей локальный градиент может иметь только одно выраженное направление; тогда смещение вдоль слабого градиента оценивается хуже."
+  },
+  {
+    "kind": "p",
+    "text": "Пирамида изображений помогает оценивать крупное смещение сначала на уменьшенном кадре, затем уточнять его на полном разрешении. Размер окна определяет компромисс: большое окно устойчивее к шуму, но смешивает соседние витки и фоновое движение; малое окно лучше локализует деталь, но чувствительнее к шуму. Параметры Farneback должны оставаться одинаковыми для двух сравниваемых фрагментов."
+  },
+  {
+    "kind": "p",
+    "text": "Усреднять направления напрямую через градусы опасно: среднее углов 1° и 359° составит 180°, хотя векторы почти совпадают. Вместо этого усредняют u и v, а итоговый угол вычисляют через atan2(v,u). Для скорости берут норму вектора. Если масштаб камеры неизвестен, скорость остаётся пикселями на секунду."
+  },
+  {
+    "kind": "p",
+    "text": "Для спиралевидного организма движение центра массы и локальное изгибание — разные характеристики. Центр рамки может почти не переместиться, хотя витки клетки колеблются. Для изучения формы во времени необходимо сопоставлять скелеты или точки вдоль оси, регистрировать последовательности и отделять движение препарата от движения объекта. Это выходит за пределы простого потока между одной парой кадров и требует отдельной разметки."
+  },
+  {
+    "kind": "h",
+    "text": "В.6. Поиск и оценивание выдачи",
+    "level": 2
+  },
+  {
+    "kind": "p",
+    "text": "Векторное представление позволяет сравнить изображение и текст в общем пространстве признаков. Нормировка преобразует вектор z в z/||z||. Тогда скалярное произведение двух единичных векторов совпадает с cosine similarity. Значение показывает близость представлений модели, а не вероятность того, что на изображении действительно изображён названный вид."
+  },
+  {
+    "kind": "p",
+    "text": "Качество top-k поиска оценивается по известным релевантным результатам. Precision@k — доля релевантных элементов среди первых k. Если в базе нет независимой экспертной разметки, число нельзя сообщать как объективную точность. Контрольный запрос может проверить, что интерфейс возвращает ожидаемые файлы, но это функциональная проверка, а не оценка обобщающей способности модели."
+  },
+  {
+    "kind": "p",
+    "text": "Для текстового запроса важно зафиксировать формулировку и язык. «Spiral bacterium», «spirochete» и «Treponema pallidum» могут вернуть разные изображения из-за различия в подписях обучения. Можно выполнить несколько заранее заданных запросов и показать их отдельно. Нельзя выбирать лучший запрос после просмотра тестовой выдачи и затем выдавать результат за независимую оценку."
+  },
+  {
+    "kind": "p",
+    "text": "Поиск по изображению использует тот же визуальный энкодер для запроса и элементов галереи. Если исходник запроса сам находится в базе, он может занять первое место с почти единичным сходством. Поэтому в оценке требуется исключить точную копию или применить другой снимок того же объекта. Стратегия разнообразия в видео должна ограничивать близкие временные отметки, иначе выдача будет заполнена соседними кадрами одного события."
+  },
+  {
+    "kind": "h",
+    "text": "В.7. Triplet loss и разбиение по источникам",
+    "level": 2
+  },
+  {
+    "kind": "p",
+    "text": "Triplet loss для расстояния d обычно записывается как max(0, d(a,p) − d(a,n) + margin), где a — опорный пример, p — положительный, n — отрицательный. Если отрицательный пример уже отдалён от опорного на нужный запас, вклад тройки становится нулевым. L2-нормировка ограничивает масштаб представления и упрощает сравнение расстояний."
+  },
+  {
+    "kind": "p",
+    "text": "Трудная отрицательная пара находится близко к опорному примеру и заставляет модель уточнить границу. Однако слишком сложные отрицательные пары могут быть ошибочно помечены: два вырезанных фрагмента разных файлов могут фактически показывать один объект или близкие структуры. Поэтому для обучения идентичности нужны подтверждённые ID клеток. В данном проекте метки относятся к ограниченному набору визуальных групп и не дают основания говорить об индивидуальной идентификации организма."
+  },
+  {
+    "kind": "p",
+    "text": "Выбор порога на validation отделяет настройку от оценки на test. Если порог подбирается на тестовой паре, оценка становится оптимистичной. В отчёте нужно сообщать число тестовых пар, долю положительных и отрицательных, схему формирования пар и факт возможного повтора фрагмента в нескольких парах."
+  },
+  {
+    "kind": "p",
+    "text": "Небольшой набор может дать резкие скачки метрик при смене одной пары. Вместо единственного числа полезно показывать матрицу ошибок, ROC-кривую и доверительный интервал, если объём позволяет. Здесь показатели нужны для учебного сравнения представлений; они не являются критерием клинического сходства или классификации Treponema pallidum."
+  },
+  {
+    "kind": "h",
+    "text": "В.8. Zero-shot модели",
+    "level": 2
+  },
+  {
+    "kind": "p",
+    "text": "Открытый словарь означает, что категории передаются модели при запуске, а не означают, что модель знает каждую биологическую разновидность. Детектор может не найти объект при слишком низком разрешении или отличающемся способе окраски. CLIP ранжирует пары текст-изображение, тогда как детектор дополнительно предсказывает прямоугольник. Эти ответы имеют разные смыслы и не должны сравниваться одним числом без определения метрики."
+  },
+  {
+    "kind": "p",
+    "text": "Порог уверенности меняет число возвращённых объектов. Снижение порога увеличивает полноту, но создаёт ложные срабатывания на фоновых структурах. Для многоклассового zero-shot детектора желательно показывать несколько порогов и фиксировать список prompt-имен. Сравнивать методы нужно на одинаковых изображениях, с единым набором эталонных рамок и точек, если оценивается точность."
+  },
+  {
+    "kind": "p",
+    "text": "CLIPSeg принимает текстовый запрос и выдаёт карту соответствия. Порог на этой карте превращает её в маску, но сам порог выбирается отдельно. Если карта отмечает фон или несколько спиралей, визуальный результат и исходная карта должны оставаться доступными для аудита. Небольшая относительная оценка не является уверенностью в том, что область принадлежит трепонеме."
+  },
+  {
+    "kind": "p",
+    "text": "Отрицательный результат тоже следует фиксировать. Пустая детекция при стандартном пороге показывает поведение модели в данных условиях. Он не доказывает, что метод никогда не применим, и не требует подменять его искусственно подобранным успешным кадром. Сравнение с цветовой маской визуально полезно, но не даёт количественной оценки без общей экспертной разметки."
+  },
+  {
+    "kind": "h",
+    "text": "В.9. Видеопоиск и Streamlit",
+    "level": 2
+  },
+  {
+    "kind": "p",
+    "text": "Индексатор преобразует каждый выбранный кадр в RGB, кодирует его моделью и сохраняет нормированный вектор. Индекс включает частоту кадров, число кадров, интервал выборки, время и путь к файлу кадра. Такой формат отделяет дорогой проход модели по видео от быстрых последующих запросов."
+  },
+  {
+    "kind": "p",
+    "text": "Шаг в две секунды даёт редкую выборку: короткое событие между выбранными кадрами может быть пропущено. Уменьшение шага повышает временное разрешение, но увеличивает время кодирования, объём хранения и число почти одинаковых изображений. Шаг следует выбирать по длительности событий, которые требуется находить, и по допустимому времени подготовки."
+  },
+  {
+    "kind": "p",
+    "text": "В Streamlit модель загружается один раз через кэш ресурсов. При каждом нажатии кодируется только текст запроса, после чего матрица сходства сортируется по убыванию. Результат содержит изображение, временную отметку и score. Если индекс отсутствует, интерфейс должен показать команду его построения вместо исключения при чтении файла."
+  },
+  {
+    "kind": "p",
+    "text": "Функциональная проверка интерфейса состоит из загрузки страницы, ввода запроса, получения ожидаемого количества карточек и отсутствия исключений. Проверка поиска дополнительно требует существующего индекса и загруженных весов модели. Начальный рендер страницы сам по себе не подтверждает, что модель CLIP скачана или поиск возвращает правильные кадры."
+  },
+  {
+    "kind": "h",
+    "text": "В.10. Разметка, учёт запусков и выводы",
+    "level": 2
+  },
+  {
+    "kind": "p",
+    "text": "CVAT облегчает ручную проверку координат, но автоматическая разметка остаётся предложением алгоритма. При импорте проверяют размеры кадра, имена меток, выход координат за границы изображения, наличие одинаковых ID и порядок ключевых точек. Для спиралей фиксируют соглашение о начале и конце. Аннотации из цветной иллюстрации не используются как эталонные медицинские данные."
+  },
+  {
+    "kind": "p",
+    "text": "В MLflow параметры фиксируют конфигурацию, метрики — измеренные числа, артефакты — файлы для визуальной проверки, а модель — сохранённые веса и окружение. Название запуска должно отражать метод или вариант, а не только порядковый номер. При повторном запуске новые ID run допустимы; значения не заменяются вручную ради совпадения с таблицей отчёта."
+  },
+  {
+    "kind": "p",
+    "text": "Результат каждой части должен связывать вход, действия и выход. Например, цветовой порог принимает конкретное изображение и параметры HSV, а на выходе создаёт маску и JSON с долей пикселей и числом крупных областей. Такой формат помогает проверить, что описанный результат соответствует исполняемому скрипту и сохранённой иллюстрации."
+  },
+  {
+    "kind": "p",
+    "text": "Главное ограничение набора — небольшое число изображений и отсутствие одинаково размеченных естественных микрофотографий для всех экспериментов. Поэтому выводы относятся к компьютерной обработке выбранных материалов. Для расширения работы следует собрать независимые микроскопические записи, обеспечить масштабную калибровку, разметить маски и скелеты, определить несколько наблюдателей и оценить согласие между ними."
+  },
+  {
+    "kind": "h",
+    "text": "Приложение Г. Карты проведения экспериментов",
+    "level": 1
+  },
+  {
+    "kind": "h",
+    "text": "Г.1. Карта обработки основного изображения",
+    "level": 2
+  },
+  {
+    "kind": "p",
+    "text": "Цель — получить воспроизводимое выделение цветных спиралевидных структур на основном изображении. До обработки фиксируются имя файла, размеры и формат. Затем строятся исходный кадр, маска, скелет и изображение с ключевыми точками. На одном рисунке размещаются исходник и три результата, что позволяет связать числовую сводку с видимыми областями."
+  },
+  {
+    "kind": "p",
+    "text": "Входом служит treponema_primary.jpg размером 870 × 540. Параметры маски задаются в скрипте: условие по зелёному каналу, порог насыщенности HSV, площади удаления малых объектов, заполнения отверстий и ядро морфологического замыкания. Все параметры должны записываться рядом с результатом при их подборе. Выходы primary_mask.png, primary_skeleton.png, primary_keypoints.jpg и preparation.json."
+  },
+  {
+    "kind": "p",
+    "text": "При оценке сначала проверяется, совпадает ли маска с фиолетовыми объектами и не выделяет ли она розовый фон. Затем проверяется, остаются ли связанные части спирали целостными и не сливаются ли разные объекты. Проверяется, что центр лежит между крайними проекциями. Результат фиксируется как геометрическая демонстрация на иллюстрации; физическая длина и точность сегментации не вычисляются."
+  },
+  {
+    "kind": "h",
+    "text": "Г.2. Карта подготовки видео",
+    "level": 2
+  },
+  {
+    "kind": "p",
+    "text": "Цель — проверить, что выбранная видеозапись соответствует теме и может быть прочитана существующими инструментами. Уточняется название, автор, лицензия, исходная ссылка, расширение файла и размер. FFprobe сообщает параметры потока. OpenCV затем проверяет, что кадры действительно декодируются и их последовательность можно перематывать."
+  },
+  {
+    "kind": "p",
+    "text": "Вход — t07.ogv, файл из открытого собрания Wikimedia Commons. Ожидаемый видеопоток: Theora, 360 × 288, 12 кадров/с, длительность 74,833 с. Контактный лист сохраняет несколько равномерно выбранных кадров, чтобы обнаружить титры, смену сцены, участки с низкой видимостью и полезные фрагменты для поиска."
+  },
+  {
+    "kind": "p",
+    "text": "Для индексации применён шаг 2 секунды, поэтому каждый кадр соответствует отдельной временной отметке. Начальные кадры с титрами и поздние кадры, где изображение сильно пересвечено, могут занимать верхние места только при подходящем тексте. При просмотре результатов необходимо сверять score с самим кадром. Cosine similarity ранжирует кандидатов и не подтверждает точность биологической идентификации."
+  },
+  {
+    "kind": "h",
+    "text": "Г.3. Карта проверки трекера",
+    "level": 2
+  },
+  {
+    "kind": "p",
+    "text": "Перед запуском выбирается один объект, который можно визуально проследить несколько секунд. На первом кадре сохраняются координаты x, y, w, h. Одни и те же координаты подаются всем алгоритмам. Изображение не масштабируется между трекерами, а частота пропуска кадров остаётся фиксированной. Такая постановка делает результаты сравнимыми внутри выбранного короткого опыта."
+  },
+  {
+    "kind": "p",
+    "text": "На контрольных кадрах вручную сохраняются эталонные прямоугольники, не ориентируясь на предсказания алгоритма. Для каждого результата рассчитываются IoU и признак успешного обновления. Отдельно измеряется время обработки. Все видеокадры с наложенными рамками сохраняются, включая кадр после потери цели. Это позволяет показать и метрику, и поведение алгоритма."
+  },
+  {
+    "kind": "p",
+    "text": "В таблице отчёта фиксируются среднее IoU, FPS и выбранное число контрольных наблюдений. Если точных ручных рамок нет для каждого кадра, среднее обозначается как среднее по разреженной проверке, а не как полная оценка видео. Для тонкого объекта влияние нескольких пикселей особенно велико, поэтому визуальные панели являются обязательной частью вывода."
+  },
+  {
+    "kind": "h",
+    "text": "Г.4. Карта оптического потока",
+    "level": 2
+  },
+  {
+    "kind": "p",
+    "text": "Для оценки выбирается пара кадров с небольшим временным интервалом. Кадры переводятся в оттенки серого и проверяются на одинаковый размер. Затем рассчитывается плотное поле Farneback, а его компоненты показываются как цветовая карта либо стрелки. Для sparse-потока точки берутся по критерию хороших углов, что позволяет избежать точек на почти гладких участках."
+  },
+  {
+    "kind": "p",
+    "text": "Значения u и v описывают движение по горизонтали и вертикали в пикселях между кадрами. Норма вектора характеризует величину перемещения. После деления на интервал времени получается скорость в пикселях в секунду. Если частота кадров равна 12, интервал между соседними кадрами составляет около 0,0833 с. Физические единицы без калибровки отсутствуют."
+  },
+  {
+    "kind": "p",
+    "text": "При анализе результата отделяется область бактерии от фона и артефактов. Среднее поле по всему кадру не следует интерпретировать как скорость спирохеты, если камера движется или поле содержит множество неподвижных объектов. При наличии видео без эталонных векторов результат описательный и не включает ошибку потока."
+  },
+  {
+    "kind": "h",
+    "text": "Г.5. Карта повышения разрешения",
+    "level": 2
+  },
+  {
+    "kind": "p",
+    "text": "Сравнение проводится на исходном изображении и на его копии, уменьшенной фиксированным коэффициентом. Уменьшенная копия увеличивается одинаковыми размерами тремя методами: nearest, bilinear и bicubic. Если используется нейросетевая модель, сохраняются веса, имя и версия модели, а её выход не подменяет исходник."
+  },
+  {
+    "kind": "p",
+    "text": "Для каждого результата рассчитываются PSNR и SSIM относительно эталонного исходного кадра. Проверяется, что размер выходов совпадает и цветовые каналы представлены одинаково. Сначала результаты просматриваются на общей шкале, затем — в увеличенном фрагменте с тонкими витками. Если модель создаёт детали, отсутствующие в исходнике, это отмечается как ограничение."
+  },
+  {
+    "kind": "p",
+    "text": "В итоговой таблице значения относятся к конкретному контролируемому преобразованию. Они не характеризуют все изображения трепонемы и не означают, что улучшенная картинка точнее биологически. Для клинического измерения нельзя использовать лишь субъективно более резкий результат; необходимо проверять сохранение размеров и формы относительно эталона."
+  },
+  {
+    "kind": "h",
+    "text": "Г.6. Карта OCR и текстовых меток",
+    "level": 2
+  },
+  {
+    "kind": "p",
+    "text": "Распознавание текста имеет смысл только для кадров с надписями, шкалой, номером образца или титром. Проверяется исходный фрагмент и несколько предобработок: цветное изображение, оттенки серого, бинаризация и увеличение. OCR возвращает текстовую строку и при наличии — confidence."
+  },
+  {
+    "kind": "p",
+    "text": "Результат сравнивается с вручную записанной строкой. Для шкалы «30 μm» важно отличать цифры от единиц: OCR может вернуть «30 um» или потерять символ μ, при этом числовая часть будет распознана. Факт распознавания цифр не означает точной интерпретации единицы измерения."
+  },
+  {
+    "kind": "p",
+    "text": "Если в видео нет подходящей надписи, OCR-пример нельзя выдавать за обработку этого видео. Допускается показать контрольный кадр с явно указанным источником либо отметить, что проверяемого текстового объекта в записи не найдено. В отчёт включаются именно входной фрагмент, предобработка, распознанная строка и эталон."
+  },
+  {
+    "kind": "h",
+    "text": "Г.7. Карта поиска изображений",
+    "level": 2
+  },
+  {
+    "kind": "p",
+    "text": "Перед индексированием проверяется число файлов и соответствие метаданных изображениям. Векторы хранятся в порядке записей каталога, а идентификатор файла — в JSON. Это предотвращает ошибку, при которой модель возвращает правильный номер вектора, но отображается другой файл."
+  },
+  {
+    "kind": "p",
+    "text": "Для текстового поиска задаётся один конкретный запрос. Сохраняются три верхних совпадения с идентификаторами файлов и значениями сходства. Для поиска по изображению используется отдельная контрольная картинка, которой нет среди элементов галереи. При поиске точной копии из базы такая копия исключается из расчёта метрики."
+  },
+  {
+    "kind": "p",
+    "text": "Вручную проверяется, что совпадения действительно показывают спиралевидные формы, а не только похожий оттенок или фон. Для учебного отчёта можно показывать оба варианта: запрос по словам и запрос по картинке. Если число подтверждённых релевантных объектов не задано заранее, качество описывается как пример выдачи, а не precision@k."
+  },
+  {
+    "kind": "h",
+    "text": "Г.8. Карта проверки Triplet-проекции",
+    "level": 2
+  },
+  {
+    "kind": "p",
+    "text": "Входной датасет разделяется по исходным источникам. Набор train используется для обновления весов, validation — для выбора эпохи и порога, test — для итогового измерения. Тройки строятся только внутри train. Если у объекта нет надёжной позитивной пары, он не должен искусственно объявляться примером той же клетки."
+  },
+  {
+    "kind": "p",
+    "text": "На каждом шаге энкодер создаёт embedding для anchor, positive и negative. После L2-нормировки расстояния вычисляются между embedding. Margin задаёт минимальный разрыв. Записываются loss по эпохам, метрики validation и выбранный checkpoint. Кривые обучения помогают выявить расходимость или быстрое насыщение."
+  },
+  {
+    "kind": "p",
+    "text": "Test метрики рассчитываются один раз после настройки. Матрица ошибок показывает, какой класс чаще получает ошибочный ответ. При небольшом наборе число пар и метод формирования тройки важнее избыточного числа десятичных знаков. Результат относится к выбранным категориям визуального сходства, не к идентификации штаммов или диагнозу."
+  },
+  {
+    "kind": "h",
+    "text": "Г.9. Карта запуска Streamlit",
+    "level": 2
+  },
+  {
+    "kind": "p",
+    "text": "Сначала проверяется наличие index.json и vectors.npy. Затем запускается приложение в каталоге проекта. При отсутствии индекса интерфейс показывает команду, которая его строит. После загрузки страницы вводится текстовое описание. Кнопка поиска вызывает модель и выводит три наиболее близких кадра."
+  },
+  {
+    "kind": "p",
+    "text": "Для каждого результата сохраняются отметка времени, путь к изображению и оценка cosine similarity. Выбранные кадры проверяются через видеоплеер в исходной временной позиции. Если выдача повторяет один и тот же момент, настраивается минимальная временная дистанция между показанными кадрами."
+  },
+  {
+    "kind": "p",
+    "text": "Проверка запуска, проверка выполнения поиска и проверка биологической корректности — разные уровни. Первая подтверждает, что приложение загрузилось; вторая — что модель и индекс доступны; третья требует ручной оценки результатов или экспертной разметки. Все три уровня в отчёте должны называться точно."
+  },
+  {
+    "kind": "h",
+    "text": "Г.10. Карта самостоятельного RuTube-запуска",
+    "level": 2
+  },
+  {
+    "kind": "p",
+    "text": "Пользователь выбирает публичную ссылку отдельного ролика и подставляет её в шаблон команды. Скрипт проверяет HTTPS, домен rutube.ru и формат идентификатора из 32 шестнадцатеричных символов. Ссылка на канал, плейлист или произвольный сайт отклоняется до загрузки."
+  },
+  {
+    "kind": "p",
+    "text": "При сетевом запуске yt-dlp сохраняет видео в data/rutube/download. Затем модуль video_index читает локальный файл и помещает кадры и векторы в data/rutube/index. Если ролик уже сохранён пользователем, параметр --local-video передаёт путь к локальному файлу; в этом варианте скачивания видео нет."
+  },
+  {
+    "kind": "p",
+    "text": "После индексации каталог указывается в Streamlit. Для отчёта записываются название ролика, URL, число кадров, запрос, три временные отметки и score. Добавляется скриншот окна приложения. В этой версии отчёта поля оставлены пустыми, поскольку сам пользователь выполнит запуск."
+  },
+  {
+    "kind": "h",
+    "text": "Приложение Д. Сводные таблицы и параметры воспроизведения",
+    "level": 1
+  },
+  {
+    "kind": "h",
+    "text": "Д.1. Таблица выходных файлов",
+    "level": 2
+  },
+  {
+    "kind": "table",
+    "headers": [
+      "Файл",
+      "Содержание",
+      "Этап"
+    ],
+    "rows": [
+      [
+        "results/preparation.json",
+        "Размер изображения, доля маски, число связных областей и геометрия",
+        "Подготовка изображения"
+      ],
+      [
+        "results/primary_mask.png",
+        "Бинарная цветовая маска",
+        "Сегментация"
+      ],
+      [
+        "results/primary_skeleton.png",
+        "Скелет бинарной маски",
+        "Геометрический анализ"
+      ],
+      [
+        "results/primary_keypoints.jpg",
+        "Три точки и ось поверх исходника",
+        "Разметка ориентиров"
+      ],
+      [
+        "results/primary_analysis.png",
+        "Четыре панели исходника и результатов",
+        "Визуальная проверка"
+      ],
+      [
+        "results/video_contact.png",
+        "Восемь кадров исторической записи",
+        "Проверка видео"
+      ],
+      [
+        "data/video_index/index.json",
+        "Времена, сведения о видео и относительные пути кадров",
+        "Индексирование"
+      ],
+      [
+        "data/video_index/vectors.npy",
+        "Нормированные векторы кадров CLIP",
+        "Видеопоиск"
+      ],
+      [
+        "results/cvat/",
+        "Локальные аннотации и архивы задачи CVAT",
+        "Экспорт аннотаций"
+      ],
+      [
+        "results/mlflow_models.png",
+        "График учебных метрик моделей",
+        "Учёт экспериментов"
+      ]
+    ],
+    "widths": [
+      0.31,
+      0.47,
+      0.22
+    ]
+  },
+  {
+    "kind": "h",
+    "text": "Д.2. Параметры цветовой обработки",
+    "level": 2
+  },
+  {
+    "kind": "table",
+    "headers": [
+      "Параметр",
+      "Значение",
+      "На что влияет"
+    ],
+    "rows": [
+      [
+        "Условие по G каналу BGR",
+        "меньше 55",
+        "Отсекает часть светлого фона"
+      ],
+      [
+        "Насыщенность HSV",
+        "больше 100",
+        "Выделяет насыщенные фиолетовые пиксели"
+      ],
+      [
+        "Удаление малых объектов",
+        "119 пикселей",
+        "Убирает одиночный шум"
+      ],
+      [
+        "Заполнение отверстий",
+        "149 пикселей",
+        "Закрывает малые пустоты в маске"
+      ],
+      [
+        "Морфологическое ядро",
+        "3 × 3",
+        "Соединяет короткие разрывы"
+      ],
+      [
+        "Порог компоненты",
+        "площадь больше 450",
+        "Оставляет крупные видимые фрагменты"
+      ]
+    ],
+    "widths": [
+      0.34,
+      0.25,
+      0.41
+    ]
+  },
+  {
+    "kind": "p",
+    "text": "Эти пороги относятся к одной цветной иллюстрации. При замене изображения их нужно проверить заново. Параметр площади выражается в квадратных пикселях; при изменении размера кадра его необходимо пересчитать. Маска для изображения другой камеры может требовать другого цветового диапазона, локального порога или обучаемого классификатора."
+  },
+  {
+    "kind": "h",
+    "text": "Д.3. Параметры видеопоиска",
+    "level": 2
+  },
+  {
+    "kind": "table",
+    "headers": [
+      "Параметр",
+      "Значение",
+      "Причина выбора"
+    ],
+    "rows": [
+      [
+        "Источник видео",
+        "t07.ogv",
+        "Историческое видео микроскопии спирохет"
+      ],
+      [
+        "Частота кадров",
+        "12 кадр/с",
+        "Метаданные видеопотока"
+      ],
+      [
+        "Размер кадра",
+        "360 × 288",
+        "Исходное разрешение"
+      ],
+      [
+        "Длительность",
+        "74,833 с",
+        "FFprobe"
+      ],
+      [
+        "Шаг семплирования",
+        "2,0 с",
+        "Умеренный размер начального индекса"
+      ],
+      [
+        "Соседство в выдаче",
+        "проверять разницу времени",
+        "Не показывать несколько почти одинаковых кадров"
+      ]
+    ],
+    "widths": [
+      0.34,
+      0.24,
+      0.42
+    ]
+  },
+  {
+    "kind": "p",
+    "text": "Если нужное движение длится меньше двух секунд, шаг индекса следует уменьшить, например до 0,5 секунды, и повторно создать кадры и векторы. Параметр нельзя изменить только в пользовательском интерфейсе, потому что отсутствующий кадр не представлен в матрице векторов. Увеличение частоты индексации повышает объём и время первоначального вычисления."
+  },
+  {
+    "kind": "h",
+    "text": "Д.4. Типовые неисправности",
+    "level": 2
+  },
+  {
+    "kind": "table",
+    "headers": [
+      "Симптом",
+      "Возможная причина",
+      "Действие"
+    ],
+    "rows": [
+      [
+        "Маска пустая",
+        "Цветовой порог не подходит или каналы перепутаны",
+        "Проверить RGB/BGR и визуализировать HSV"
+      ],
+      [
+        "Один объект распался",
+        "Разрыв слабого контраста",
+        "Проверить порог и ядро замыкания"
+      ],
+      [
+        "Несколько спиралей слиты",
+        "Касание в исходнике или ядро велико",
+        "Осмотреть исходник и уменьшить ядро"
+      ],
+      [
+        "Скелет имеет ветви",
+        "Неровная маска или касание объектов",
+        "Проверить компоненту до разветвления"
+      ],
+      [
+        "Видео не открывается",
+        "Кодек или контейнер не читается",
+        "Проверить ffprobe и чтение первого кадра"
+      ],
+      [
+        "Модель CLIP не загружается",
+        "Веса отсутствуют или нет доступа к источнику",
+        "Проверить кэш модели и сетевую доступность"
+      ],
+      [
+        "Streamlit сообщает об отсутствии индекса",
+        "Каталог ещё не построен",
+        "Выполнить команду video_index.py"
+      ],
+      [
+        "RuTube URL отклонён",
+        "URL не относится к публичному видео заданного вида",
+        "Вставить HTTPS-ссылку конкретного ролика"
+      ]
+    ],
+    "widths": [
+      0.27,
+      0.35,
+      0.38
+    ]
+  },
+  {
+    "kind": "p",
+    "text": "При исправлении ошибки сначала сохраняется исходное сообщение и точная команда. Затем проверяется минимальное предположение: существует ли файл, читается ли первый кадр, загружен ли индекс, совпадает ли длина массива векторов с количеством записей. После изменения параметра операция повторяется на той же входной выборке. Это позволяет понять, связана ли ошибка с окружением, форматом файла или самой обработкой."
+  },
+  {
+    "kind": "h",
+    "text": "Д.5. Основные термины",
+    "level": 2
+  },
+  {
+    "kind": "table",
+    "headers": [
+      "Термин",
+      "Определение для данной работы"
+    ],
+    "rows": [
+      [
+        "Связная компонента",
+        "Набор соседних пикселей бинарной маски, достижимых друг от друга."
+      ],
+      [
+        "Скелет",
+        "Однопиксельное приближение центральной линии бинарной области."
+      ],
+      [
+        "Ключевая точка",
+        "Ориентир с заранее заданным значением, координатой и видимостью."
+      ],
+      [
+        "Трекер",
+        "Алгоритм, обновляющий положение выбранной рамки в последовательности кадров."
+      ],
+      [
+        "Оптический поток",
+        "Поле оценённых смещений визуальных структур между кадрами."
+      ],
+      [
+        "Эмбеддинг",
+        "Векторное представление изображения или текста для сравнения."
+      ],
+      [
+        "Cosine similarity",
+        "Скалярное произведение нормированных векторов; показатель близости признаков."
+      ],
+      [
+        "Triplet loss",
+        "Функция потерь, разделяющая положительный и отрицательный примеры относительно опорного."
+      ],
+      [
+        "Zero-shot",
+        "Применение модели с текстовыми категориями без обучения на текущей выборке."
+      ],
+      [
+        "IoU",
+        "Отношение площади пересечения областей к площади их объединения."
+      ]
+    ],
+    "widths": [
+      0.28,
+      0.72
+    ]
+  },
+  {
+    "kind": "h",
     "text": "Список использованных источников",
     "level": 1
   },
