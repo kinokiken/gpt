@@ -1,6 +1,7 @@
 # Лабораторная работа № 4
 
-- [Новая версия по Treponema pallidum](lab4_treponema/README.md) — промежуточный проверенный комплект.
+- [Версия по Treponema pallidum](lab4_treponema/README.md) — основное изображение, дополнительные источники, новое видео, Streamlit и подробный отчёт.
+- [Скачать отчёт DOCX](lab4_treponema/deliverables/Andreev_Lab4_Treponema_Report.docx?raw=true)
 - [Инструкция для самостоятельного запуска RuTube](lab4_treponema/RUN_RUTUBE.md).
 - [Предыдущая полная версия](lab4/README.md).
 

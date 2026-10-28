@@ -1,5 +1,5 @@
 from pathlib import Path
-import json,re,html
+import json,re,html,os
 from PIL import Image as PILImage
 from docx import Document
 from docx.shared import Cm,Pt,RGBColor
@@ -14,7 +14,10 @@ from reportlab.lib import colors
 from reportlab.lib.pagesizes import A4
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
-P=Path(__file__).resolve().parents[1];D=P/'deliverables';D.mkdir(exist_ok=True);blocks=json.loads((P/'report_blocks.json').read_text())
+P=Path(os.environ.get('REPORT_ROOT',Path(__file__).resolve().parents[1])).resolve();D=P/'deliverables';D.mkdir(exist_ok=True);blocks=json.loads((P/'report_blocks.json').read_text())
+REPORT_BASENAME=os.environ.get('REPORT_BASENAME','Andreev_Lab4_Report')
+REPORT_HEADING=os.environ.get('REPORT_HEADING','Распознавание и анализ объектов\nна изображениях и видео').replace('\\n','\n')
+REPORT_SUBJECT=os.environ.get('REPORT_SUBJECT','Эксперименты на открытых изображениях и видео бактерий')
 for family,prefix in [('Serif','DejaVuSerif'),('Sans','DejaVuSans'),('Mono','DejaVuSansMono')]:
  base=Path('/usr/share/fonts/truetype/dejavu')
  pdfmetrics.registerFont(TTFont(family,str(base/(prefix+'.ttf'))));pdfmetrics.registerFont(TTFont(family+'Bold',str(base/(prefix+'-Bold.ttf'))));pdfmetrics.registerFontFamily(family,normal=family,bold=family+'Bold',italic=family,boldItalic=family+'Bold')
@@ -59,7 +62,7 @@ for _ in range(2):doc.add_paragraph('')
 story.append(Spacer(1,48))
 titleline('ЛАБОРАТОРНАЯ РАБОТА № 4',18,True)
 titleline('по дисциплине «Компьютерное зрение»',14)
-titleline('Распознавание и анализ объектов\nна изображениях и видео',16,True)
+titleline(REPORT_HEADING,16,True)
 titleline('Отчёт о выполненных экспериментах',12)
 for _ in range(2):doc.add_paragraph('')
 story.append(Spacer(1,50))
@@ -111,6 +114,6 @@ for v in blocks:
   cp=doc.add_paragraph(caption);cp.alignment=WD_ALIGN_PARAGRAPH.CENTER;cp.paragraph_format.first_line_indent=Cm(0);cp.paragraph_format.line_spacing=1;cp.paragraph_format.space_after=Pt(10)
   for rr in cp.runs:rr.font.size=Pt(11)
   story.append(KeepTogether([Image(v['path'],width=w*scale,height=h*scale),Paragraph(esc(caption),styles['caption'])]))
-doc.core_properties.author='Андреев А. К.';doc.core_properties.title='Лабораторная работа № 4. Компьютерное зрение';doc.core_properties.subject='Эксперименты на открытых изображениях и видео бактерий';doc.save(D/'Andreev_Lab4_Report.docx')
-Report(D/'Andreev_Lab4_Report.pdf').multiBuild(story)
+doc.core_properties.author='Андреев А. К.';doc.core_properties.title='Лабораторная работа № 4. Компьютерное зрение';doc.core_properties.subject=REPORT_SUBJECT;doc.save(D/f'{REPORT_BASENAME}.docx')
+Report(D/f'{REPORT_BASENAME}.pdf').multiBuild(story)
 print('Saved DOCX and PDF',fig_no,'figures',table_no,'tables')
