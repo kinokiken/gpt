@@ -1,0 +1,72 @@
+[
+  {
+    "id": "t01",
+    "title": "TreponemaPallidum.jpg",
+    "file": "t01.jpg",
+    "width": 572,
+    "height": 500,
+    "source_page": "https://commons.wikimedia.org/wiki/File:TreponemaPallidum.jpg",
+    "artist": "<ul><li>Photo Credit:</li>\n<li>Content Providers(s): CDC/ Dr. David Cox</li></ul>",
+    "license": "Public domain"
+  },
+  {
+    "id": "t02",
+    "title": "Treponema pallidum.jpg",
+    "file": "t02.jpg",
+    "width": 531,
+    "height": 500,
+    "source_page": "https://commons.wikimedia.org/wiki/File:Treponema_pallidum.jpg",
+    "artist": "<ul><li>Photo credit:</li>\n<li>Content providers(s): CDC / Dr. David Cox</li></ul>",
+    "license": "Public domain"
+  },
+  {
+    "id": "t03",
+    "title": "Treponema pallidum 01.png",
+    "file": "t03.png",
+    "width": 734,
+    "height": 497,
+    "source_page": "https://commons.wikimedia.org/wiki/File:Treponema_pallidum_01.png",
+    "artist": "CDC",
+    "license": "Public domain"
+  },
+  {
+    "id": "t04",
+    "title": "Treponemapallidum.jpg",
+    "file": "t04.jpg",
+    "width": 2816,
+    "height": 2190,
+    "source_page": "https://commons.wikimedia.org/wiki/File:Treponemapallidum.jpg",
+    "artist": "NIAID",
+    "license": "Public domain"
+  },
+  {
+    "id": "t05",
+    "title": "Treponema pallidum Bacteria (Syphilis) - NIAID.jpg",
+    "file": "t05.jpg",
+    "width": 4123,
+    "height": 3206,
+    "source_page": "https://commons.wikimedia.org/wiki/File:Treponema_pallidum_Bacteria_(Syphilis)_-_NIAID.jpg",
+    "artist": "NIAID",
+    "license": "CC BY 2.0"
+  },
+  {
+    "id": "t06",
+    "title": "Syphilis Bacteria (16842837731).jpg",
+    "file": "t06.jpg",
+    "width": 391,
+    "height": 480,
+    "source_page": "https://commons.wikimedia.org/wiki/File:Syphilis_Bacteria_(16842837731).jpg",
+    "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/54591706@N02\">NIAID</a>",
+    "license": "CC BY 2.0"
+  },
+  {
+    "id": "t07",
+    "title": "Ultramicroscope time-lapse of syphilis parasite-Comandon-1910.ogv",
+    "file": "t07.ogv",
+    "width": 360,
+    "height": 288,
+    "source_page": "https://commons.wikimedia.org/wiki/File:Ultramicroscope_time-lapse_of_syphilis_parasite-Comandon-1910.ogv",
+    "artist": "Jean Comandon",
+    "license": "Public domain"
+  }
+]

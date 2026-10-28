@@ -9,3 +9,6 @@ lab4/system-libs/
 lab4/mlflow/
 lab4/mlruns/
 lab4/*.log
+lab4_treponema/.cache/
+lab4_treponema/**/__pycache__/
+lab4_treponema/data/rutube/
